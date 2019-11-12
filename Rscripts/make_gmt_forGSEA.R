@@ -24,4 +24,6 @@ gmt$GID <- row.names(gmt)
 gmt <- merge(gmt,annotation,by.x="GID",by.y="V2")
 gmt$querys <- gmt$unlist.tapply.gene2egg_unique.GID..as.factor.gene2egg_unique.egg...
 gmt <- gmt[,-c(2,3)]
+#avoid duplicate
+gmt <- gmt[unique(gmt$GID),]
 write.table(gmt, "egg.gmt", col.names = F, row.names = T, quote = F, sep = "\t")
