@@ -16,7 +16,7 @@ gene2egg_unique <- unique.data.frame(gene2egg)
 #get eggNOG annotation from eggNOG website http://eggnog5.embl.de/
 annotation <- read.delim('~/Downloads/e5.og_annotations.tsv', sep = "\t", header=F, quote="",check.names=F)
 annotation <- annotation[-1]
-annotation <- annotation[unique(annotation$V2),]
+annotation <- annotation[!duplicated(annotation$V2),]
 write.table(annotation,"unique_annotation.txt", sep="\t", quote=F, col.names=F, row.names=F)#save for convinence
 gmt <- data.frame(unlist(tapply(gene2egg_unique$GID,as.factor(gene2egg_unique$egg),function(x) paste(x,collapse ="\t"),simplify =F)))
 #gmt$description <- rep("An egg annotation", nrow(gmt))
@@ -25,4 +25,5 @@ gmt <- merge(gmt,annotation,by.x="GID",by.y="V2")
 gmt$querys <- gmt$unlist.tapply.gene2egg_unique.GID..as.factor.gene2egg_unique.egg...
 gmt <- gmt[,-c(2,3)]
 #avoid duplicate
+gmt <- gmt[!duplicated(gmt$GID),]
 write.table(gmt, "egg.gmt", col.names = F, row.names = T, quote = F, sep = "\t")
