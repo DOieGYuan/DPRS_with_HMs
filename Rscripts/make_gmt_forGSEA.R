@@ -1,7 +1,8 @@
 #prepare gmt for GSEA
 options(stringsAsFactors = F)
 library(tidyverse)
-egg <- read.delim("trimed.txt", sep = "\t")
+egg <- read.delim("eggnog_annotation.txt", sep = "\t")
+#If you want KOs or GOs rather than eggNOG, change "egg_anno" to "GO" or "KEGG_module"
 gterms <- egg %>% dplyr::select(GID = query_name, GENENAME = egg_anno) %>% na.omit()
 gene2egg <- data.frame(GID = character(), egg = character())
 for (row in 1:nrow(gterms)) {
@@ -12,8 +13,15 @@ for (row in 1:nrow(gterms)) {
   gene2egg <- rbind(gene2egg, tmp)
 }
 gene2egg_unique <- unique.data.frame(gene2egg)
+#get eggNOG annotation from eggNOG website http://eggnog5.embl.de/
+annotation <- read.delim('~/Downloads/e5.og_annotations.tsv', sep = "\t", header=F, quote="",check.names=F)
+annotation <- annotation[-1]
+annotation <- annotation[unique(annotation$V2),]
+write.table(annotation,"unique_annotation.txt", sep="\t", quote=F, col.names=F, row.names=F)#save for convinence
 gmt <- data.frame(unlist(tapply(gene2egg_unique$GID,as.factor(gene2egg_unique$egg),function(x) paste(x,collapse ="\t"),simplify =F)))
-gmt$description <- rep("An egg annotation", nrow(gmt))
-gmt$query_list <- gmt$unlist.tapply.gene2egg_unique.GID..as.factor.gene2egg_unique.egg...
-gmt <- gmt[, -1]
+#gmt$description <- rep("An egg annotation", nrow(gmt))
+gmt$GID <- row.names(gmt)
+gmt <- merge(gmt,annotation,by.x="GID",by.y="V2")
+gmt$querys <- gmt$unlist.tapply.gene2egg_unique.GID..as.factor.gene2egg_unique.egg...
+gmt <- gmt[,-c(2,3)]
 write.table(gmt, "egg.gmt", col.names = F, row.names = T, quote = F, sep = "\t")
