@@ -1,3 +1,5 @@
+# author: DOieGYuan
+# https://github.com/DOieGYuan/DPRS_with_HMs
 # prepare gmt for GSEA and g:profile
 # use the interproscan versus eggmapper results
 ################
