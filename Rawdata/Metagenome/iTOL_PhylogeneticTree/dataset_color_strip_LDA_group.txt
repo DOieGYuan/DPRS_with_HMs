@@ -1,0 +1,217 @@
+DATASET_COLORSTRIP
+#In colored strip datasets, each ID is associated to a color box/strip and can have an optional label. Color can be specified in hexadecimal, RGB or RGBA notation. When using RGB or RGBA notation, you cannot use COMMA as the dataset separator
+
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+
+SEPARATOR TAB
+#SEPARATOR COMMA
+#SEPARATOR SPACE
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	LDAgroup
+
+#dataset color (can be changed later)
+COLOR	#ff0066
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+#If COLOR_BRANCHES is set to 1, branches of the tree will be colored according to the colors of the strips above the leaves.
+#When all children of a node have the same color, it will be colored the same, ie. the color will propagate inwards towards the root.
+COLOR_BRANCHES	0
+
+#each dataset can have a legend, which is defined below
+#for each row in the legend, there should be one shape, color and label
+#shape should be a number between 1 and 6:
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+LEGEND_TITLE	LDAgroup
+LEGEND_SHAPES	1
+LEGEND_COLORS	#ab82ff
+LEGEND_LABELS	LDAgroup
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#width of the colored strip
+STRIP_WIDTH	25
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+MARGIN	0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the color strip 
+BORDER_WIDTH	0
+
+#border color; used when BORDER_WIDTH is above 0
+BORDER_COLOR	#0000ff
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+SHOW_INTERNAL	1
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+
+#Examples:
+#assign a red colored strip to leaf 9606, with label 'Human' (label is displayed in the mouseover popups)
+#MAG-35	#ab82ff	Alphaproteobacteria
+
+#assign a green, semi-transparent (alpha 0.5) strip to an internal node, without any label. If 'Show internal values' is set to 'No', this will only be displayed if the node is collapsed. 
+MAG-223	#1c86ee	Cd
+MAG-123	#1c86ee	Cd
+MAG-128	#1c86ee	Cd
+MAG-129	#1c86ee	Cd
+MAG-90	#1c86ee	Cd
+MAG-154	#1c86ee	Cd
+MAG-149	#1c86ee	Cd
+MAG-207	#1c86ee	Cd
+MAG-208	#1c86ee	Cd
+MAG-169	#1c86ee	Cd
+MAG-175	#1c86ee	Cd
+MAG-172	#1c86ee	Cd
+MAG-194	#1c86ee	Cd
+MAG-163	#1c86ee	Cd
+MAG-166	#1c86ee	Cd
+MAG-109	#1c86ee	Cd
+MAG-105	#1c86ee	Cd
+MAG-227	#1c86ee	Cd
+MAG-228	#1c86ee	Cd
+MAG-232	#1c86ee	Cd
+MAG-92	#1c86ee	Cd
+MAG-24	#1c86ee	Cd
+MAG-20	#1c86ee	Cd
+MAG-53	#1c86ee	Cd
+MAG-231	#1c86ee	Cd
+MAG-212	#1c86ee	Cd
+MAG-248	#1c86ee	Cd
+MAG-247	#1c86ee	Cd
+MAG-246	#1c86ee	Cd
+MAG-23	#1c86ee	Cd
+MAG-37	#1c86ee	Cd
+MAG-33	#1c86ee	Cd
+MAG-38	#1c86ee	Cd
+MAG-187	#1c86ee	Cd
+MAG-57	#1c86ee	Cd
+MAG-82	#3cb371	Ni
+MAG-99	#3cb371	Ni
+MAG-16	#3cb371	Ni
+MAG-15	#3cb371	Ni
+MAG-156	#3cb371	Ni
+MAG-211	#3cb371	Ni
+MAG-73	#3cb371	Ni
+MAG-179	#3cb371	Ni
+MAG-115	#3cb371	Ni
+MAG-114	#3cb371	Ni
+MAG-193	#3cb371	Ni
+MAG-104	#3cb371	Ni
+MAG-107	#3cb371	Ni
+MAG-56	#3cb371	Ni
+MAG-58	#3cb371	Ni
+MAG-189	#3cb371	Ni
+MAG-164	#3cb371	Ni
+MAG-239	#3cb371	Ni
+MAG-261	#3cb371	Ni
+MAG-234	#3cb371	Ni
+MAG-230	#3cb371	Ni
+MAG-26	#3cb371	Ni
+MAG-25	#3cb371	Ni
+MAG-263	#3cb371	Ni
+MAG-245	#3cb371	Ni
+MAG-36	#3cb371	Ni
+MAG-226	#eead0e	Cr
+MAG-250	#eead0e	Cr
+MAG-94	#eead0e	Cr
+MAG-93	#eead0e	Cr
+MAG-17	#eead0e	Cr
+MAG-152	#eead0e	Cr
+MAG-182	#eead0e	Cr
+MAG-252	#eead0e	Cr
+MAG-183	#eead0e	Cr
+MAG-254	#eead0e	Cr
+MAG-64	#eead0e	Cr
+MAG-255	#eead0e	Cr
+MAG-144	#eead0e	Cr
+MAG-215	#eead0e	Cr
+MAG-79	#eead0e	Cr
+MAG-72	#eead0e	Cr
+MAG-74	#eead0e	Cr
+MAG-77	#eead0e	Cr
+MAG-76	#eead0e	Cr
+MAG-170	#eead0e	Cr
+MAG-113	#eead0e	Cr
+MAG-191	#eead0e	Cr
+MAG-1	#eead0e	Cr
+MAG-161	#eead0e	Cr
+MAG-102	#eead0e	Cr
+MAG-188	#eead0e	Cr
+MAG-48	#eead0e	Cr
+MAG-132	#eead0e	Cr
+MAG-233	#eead0e	Cr
+MAG-22	#eead0e	Cr
+MAG-262	#eead0e	Cr
+MAG-29	#eead0e	Cr
+MAG-52	#eead0e	Cr
+MAG-243	#eead0e	Cr
+MAG-34	#eead0e	Cr
+MAG-195	#ff4040	CK
+MAG-258	#ff4040	CK
+MAG-127	#ff4040	CK
+MAG-124	#ff4040	CK
+MAG-260	#ff4040	CK
+MAG-91	#ff4040	CK
+MAG-98	#ff4040	CK
+MAG-44	#ff4040	CK
+MAG-13	#ff4040	CK
+MAG-12	#ff4040	CK
+MAG-153	#ff4040	CK
+MAG-155	#ff4040	CK
+MAG-222	#ff4040	CK
+MAG-43	#ff4040	CK
+MAG-80	#ff4040	CK
+MAG-251	#ff4040	CK
+MAG-68	#ff4040	CK
+MAG-60	#ff4040	CK
+MAG-67	#ff4040	CK
+MAG-142	#ff4040	CK
+MAG-143	#ff4040	CK
+MAG-146	#ff4040	CK
+MAG-147	#ff4040	CK
+MAG-205	#ff4040	CK
+MAG-202	#ff4040	CK
+MAG-200	#ff4040	CK
+MAG-78	#ff4040	CK
+MAG-71	#ff4040	CK
+MAG-75	#ff4040	CK
+MAG-177	#ff4040	CK
+MAG-176	#ff4040	CK
+MAG-119	#ff4040	CK
+MAG-117	#ff4040	CK
+MAG-237	#ff4040	CK
+MAG-5	#ff4040	CK
+MAG-7	#ff4040	CK
+MAG-6	#ff4040	CK
+MAG-168	#ff4040	CK
+MAG-3	#ff4040	CK
+MAG-160	#ff4040	CK
+MAG-186	#ff4040	CK
+MAG-225	#ff4040	CK
+MAG-130	#ff4040	CK
+MAG-238	#ff4040	CK
+MAG-35	#ff4040	CK
