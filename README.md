@@ -90,6 +90,7 @@ do TrimmomaticPE $f \
     LEADING:2 TRAILING:2 \
     SLIDINGWINDOW:4:2 \
     MINLEN:25
+done
 ```
 You can skip this QC process by downloading the clean version of our data (see **Data availability** section in our paper).
 ### Assembly
