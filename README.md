@@ -268,8 +268,8 @@ ggplot(pick, aes(x = sample, y = abundance, fill = tax)) +
   scale_fill_brewer(palette = "Set3")
 dev.off()
 ```
-Note that we only show the ploting of microbes' abundance profiles.
-For ploting the performance of reactos in Fig.2ab, see [plot_performance.R] and [plot_Fig.S5.R].
+Note that we only show the ploting of microbes' abundance profiles.  
+For ploting the performance of reactos in Fig.2ab, see [plot_performance.R](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/plot_performance.R) and [plot_Fig.S5.R](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/plot_Fig.S5.R).
 ### Functional annoation of MAGs and Metaproteome
 
 ### Enrichment analysis
