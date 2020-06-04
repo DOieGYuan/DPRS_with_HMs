@@ -201,4 +201,4 @@ Here, we get **Fig.1** (Functional microbes inhabiting DPRS).
 ### Co-occurence network
 Finally, we finish **Fig.6**.
 
-**Due to the complexity of bioinformatic analysis in this study, we still updating this document and we will finish this before publish.**
+**Due to the complexity of bioinformatic analysis in this study, we are still updating this document but we will finish this before publish.**
