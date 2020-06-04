@@ -1,7 +1,5 @@
 # Reproduce the results in our paper [Unpublished]
----
 This study focuses on the taxon-specifc heavy metal resistance in denitrifying phosphorus removal sludge
-
 ## Main contents in this repository
 Home-made functional genes database is deposited in [Database](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Database) filefold (both .fasta, .dmnd and .hmm);  
 Raw data are in folder [Raw_data](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rawdata);  
@@ -9,7 +7,9 @@ R scripts to reproduce the figures in our paper are in [Rscripts](https://github
 Shell scripts to reproduce data processing in our paper are in [Shellscripts](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/shell).  
 
 ## Install dependencies
-We recommond using [Anaconda](https://www.anaconda.com/) to install all the dependencies.
+All the processes were performed on ubuntu 16.04LTS OS.
+We recommond using [Anaconda](https://www.anaconda.com/) to install all the dependencies.   
+At least 256GB RAM for assembly, 132GB RAM for downstream taxonomic analysis, and 64GB RAM for the rest analysis.
 ### quality control
 ```
 conda install -c bioconda fastqc trimmomatic
@@ -40,7 +40,7 @@ conda install -c bioconda gtdbtk singlem kraken2
 Use [UBCG](https://www.ezbiocloud.net/) for building tree file and [iTOL](https://itol.embl.de/) for visualization.
 ### Functional annotation
 ```
-conda install -c bioconda enrichm
+conda install -c bioconda enrichm hmmer diamond
 ```
 Also install [emapper](https://github.com/eggnogdb/eggnog-mapper) and [InterProScan](https://github.com/ebi-pf-team/interproscan) manually
 ### R packages
@@ -113,7 +113,7 @@ chmod 775 binning_wf
 ```  
 Now we get high-quality metagenomic-assembled genomes (MAGs).
 ### Taonomic classification
-See [GTDBtk manual] for details  
+See [GTDBtk manual] for details in MAG taxonomic classification
 Here we use:
 ```
 mkdir genomes
@@ -124,3 +124,37 @@ tar xvzf gtdbtk_r89_data.tar.gz
 # Then, annotate
 gtdbtk classify_wf --genome_dir genomes --out_dir GTDBtk_tax --cpus 64
 ```
+Then we build Phylogenetic tree for MAGs using UBCG pipeline
+```
+mkdir UBCG
+cd ubcg
+ln -s metawrap/reasm/reassembled_bins/*.fa .
+#Step 1: Converting genome assemblies or contigs (fasta) to bcg files
+for f in *.fa ; do java -jar UBCG.jar extract -i $f -bcg_dir ./bcg -label ${f%.fna} -t 64; done
+#Step 2: Generating multiple alignments from bcg files
+java -jar UBCG.jar align -bcg_dir ./bcg -out_dir tree/ -t 64 -prefix dprs -raxml
+cat tree/dprs*92*.nwk | sed 's/\'//g' > TreeFile.nwk
+#calculate orthoANI
+java -jar OAU.jar -u usearch -fd ./ -n 64 -fmt matrix -o ANI.txt
+```
+Now we get **[TreeFile.nwk]**(https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/TreeFile.nwk)  
+
+*(Optional step for Supplementary information Fig.S1)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
+Database is based on all the bacterial, algal and viral genomes download from NCBI. (Custom database construction see [kraken2's manual](https://ccb.jhu.edu/software/kraken2/index.shtml?t=manual))
+```
+for f in *_1.fq.gz
+do kraken2 --db NCBI_db/ --paired $f ${f%_1.fq.gz}_2.fq.gz \
+  --threads 64 --report ${f%_1.fq.gz}.txt --use-mpa-style
+done
+```
+
+### Extract functional genes in MAGs
+Download our home-made referential database (.dmnd, hmm and original .fasta).  
+```
+mkdir dmnd #for DIAMOND
+mkdir hmm #for HMMER
+mv *.dmnd dmnd/
+mv *.hmm dmnd/
+# predict CDS by Prodigal
+for f in genomes/*.fa
+do prodigal
