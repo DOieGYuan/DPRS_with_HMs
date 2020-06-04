@@ -190,4 +190,15 @@ Refer to the [annotation template](https://itol.embl.de/help/dataset_color_strip
 
 Draw the file to the iTOL tree decorating window to activate this annotation.  
 
-Here, we get **Fig.1**.
+Here, we get **Fig.1** (Functional microbes inhabiting DPRS).
+
+### Plot abundance profile of MAGs
+
+### Functional annoation of MAGs and Metaproteome
+
+### Enrichment analysis
+
+### Co-occurence network
+Finally, we finish **Fig.6**.
+
+**Due to the complexity of bioinformatic analysis in this study, we still updating this document and we will finish this before publish.**
