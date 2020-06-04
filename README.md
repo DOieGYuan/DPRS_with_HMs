@@ -115,7 +115,7 @@ chmod 775 binning_wf
 Now we get **high-quality metagenomic-assembled genomes (MAGs)**.  
 Or, you can skip this time-consuming step by downloading MAGs from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB6626062/overview).
 ### Taonomic classification
-See [GTDBtk manual] for details in MAG taxonomic classification
+See [GTDBtk manual](https://ecogenomics.github.io/GTDBTk/) for details in MAG taxonomic classification
 Here we use:
 ```
 mkdir genomes
@@ -126,6 +126,7 @@ tar xvzf gtdbtk_r89_data.tar.gz
 # Then, annotate
 gtdbtk classify_wf --genome_dir genomes --out_dir GTDBtk_tax --cpus 64
 ```
+Now we have the taxonomic information for each MAG.
 Then we build Phylogenetic tree for MAGs using UBCG pipeline
 ```
 mkdir UBCG
@@ -140,6 +141,7 @@ cat tree/dprs*92*.nwk | sed 's/\'//g' > TreeFile.nwk
 java -jar OAU.jar -u usearch -fd ./ -n 64 -fmt matrix -o ANI.txt
 ```
 Now we get **[TreeFile.nwk](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/TreeFile.nwk)**  
+Upload the .nwk file onto the iTOL online system to construct a phylogenetic tree.  
 
 *(Optional step for Supplementary information Fig.S1)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
 Database is based on all the bacterial, algal and viral genomes download from NCBI. (Custom database construction see [kraken2's manual](https://ccb.jhu.edu/software/kraken2/index.shtml?t=manual))
@@ -155,10 +157,26 @@ done
 ### Extract functional genes in MAGs
 Download our home-made referential database (.dmnd, hmm and original .fasta).  
 ```
-mkdir dmnd #for DIAMOND
-mkdir hmm #for HMMER
-mv *.dmnd dmnd/
-mv *.hmm dmnd/
+mv [directory]/*.dmnd .
+mv [directory]/*.hmm .
 # predict CDS by Prodigal
 for f in genomes/*.fa
-do prodigal
+do prodigal -p single -i $f -a ${f%.fa}.faa
+done
+./Search_functional_genes_DIAMOND.sh # 1e-10 50 80 80
+./Search_functional_genes_HMMER.sh 60
+```
+Couple the results of DIAMOND (1e-10,id50,cov80) and HMMER (socre > 60), the presence of functional genes in MAGs is profiled.  
+According to the [annotation template](https://itol.embl.de/help/dataset_binary_template.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/raw/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_binary_functional_genes.txt)**  
+
+Draw the file to the iTOL tree decorating window to activate this annotation.
+
+### Estimate the abundance of each MAG based on its coverage
+We use the "quant_bins" module of metaWRAP to get copies of genome per million reads (CoPM):  
+```
+
+```
+Then perform LEfSe analysis to identify biomarkers in each group
+```
+
+```
