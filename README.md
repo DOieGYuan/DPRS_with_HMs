@@ -103,3 +103,6 @@ megahit --k-list 25,31,41,51,61,71,81,101,121,141 -1 *_1.fq.gz -2 *_2.fq.gz -o a
 # estimate assembly quality
 quast -o quast --min-contig 200 --threads 64 Coasm.contigs.fa
 ```
+### Binning
+Copy [binning_wf.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.sh) to reads directory and run `./binning_wf.sh Coasm.fa [threads]` (you may need run `chmod` first)  
+Now we get high-quality metagenomic-assembled genomes (MAGs).
