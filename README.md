@@ -1,4 +1,4 @@
-# Reproduce the results in our paper [currently unpublished]
+# Reproduce the results in our paper [Unpublished]
 ---
 This study focuses on the taxon-specifc heavy metal resistance in denitrifying phosphorus removal sludge
 
