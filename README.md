@@ -167,16 +167,27 @@ done
 ./Search_functional_genes_HMMER.sh 60
 ```
 Couple the results of DIAMOND (1e-10,id50,cov80) and HMMER (socre > 60), the presence of functional genes in MAGs is profiled.  
-According to the [annotation template](https://itol.embl.de/help/dataset_binary_template.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/raw/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_binary_functional_genes.txt)**  
+Refer to the [annotation template](https://itol.embl.de/help/dataset_binary_template.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/raw/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_binary_functional_genes.txt)**  
 
 Draw the file to the iTOL tree decorating window to activate this annotation.
 
 ### Estimate the abundance of each MAG based on its coverage
 We use the "quant_bins" module of metaWRAP to get copies of genome per million reads (CoPM):  
 ```
+unzip *.fq.gz
+for f in *.fq
+do mv $f ${f%.fq}.fastq
+done
+metawrap quant_bins -b metawrap/reasm/reassembled_bins/ \
+  -o quant_bins/ -a assembly/Coasm.contigs.fa *.fastq -t 64
+```
+Then base on the abundance file, we perform LEfSe analysis to identify biomarkers in each group  
+```
+lefse-format_input.py MAG_info.tsv lefse.out -c 2 -u 1 -o 1000000
+run_lefse.py lefse.out lefse.tsv -l 2
+```
+Refer to the [annotation template](https://itol.embl.de/help/dataset_color_strip.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_color_strip_LDA_group.txt)**  
 
-```
-Then perform LEfSe analysis to identify biomarkers in each group
-```
+Draw the file to the iTOL tree decorating window to activate this annotation.  
 
-```
+Here, we get **Fig.1**.
