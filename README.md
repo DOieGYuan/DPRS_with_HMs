@@ -186,14 +186,90 @@ Then base on the abundance file, we perform LEfSe analysis to identify biomarker
 lefse-format_input.py MAG_info.tsv lefse.out -c 2 -u 1 -o 1000000
 run_lefse.py lefse.out lefse.tsv -l 2
 ```
-Refer to the [annotation template](https://itol.embl.de/help/dataset_color_strip.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_color_strip_LDA_group.txt)**  
+Refer to the [annotation template](https://itol.embl.de/help/dataset_color_strip.txt) provided by iTOL, we get **[dataset_color_strip_LDA_group.txt](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_color_strip_LDA_group.txt)**  
 
 Draw the file to the iTOL tree decorating window to activate this annotation.  
 
 Here, we get **Fig.1** (Functional microbes inhabiting DPRS).
 
 ### Plot abundance profile of MAGs
-
+To create **Fig.2**, we use R package ggplot2.
+```
+setwd("/Taxonomy/Functional_microbes") # change to your working directory
+library(tidyverse)
+library(stringr)
+info <- read_tsv("info_MAG.tsv")
+data <- pivot_longer(info, -c(genome, AMO, hao, group, LDA_socre, pvalue,
+                              NXR, NAS, NAR, NAP, NIR, ccNIR, tax,
+                              ppk1, ppk2,ppx),
+                     names_to = "sample",
+                     values_to = "abundance")
+data$sample <- factor(data$sample, levels = c("Cd_O_aver", "Cd_LP_aver", "Cd_MP_aver", "Cd_HP_aver",
+                                              "Ni_O_aver", "Ni_LP_aver", "Ni_MP_aver", "Ni_HP_aver",
+                                              "Cr_O_aver", "Cr_LP_aver", "Cr_MP_aver", "Cr_HP_aver", "CK"))
+data <- mutate(data, name = str_c(genome, tax, sep = " "))
+pick <- filter(data, NAR=="Yes"|NAP=="Yes"|NIR=="Yes") # plot potential denitrifiers (Fig. S2)
+pick <- filter(data, NXR=="Yes") # plot potential nitrite oxidizers (Fig. S3)
+pick <- filter(data, AMO=="Yes") # plot potential ammonia oxidizers Fig.2c (upper)
+pick <- filter(data, AMO=="Yes"| genome == "MAG-46") # plot Fig.2c (lower)
+pick <- filter(data, tax=="p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Rhodocyclaceae;g__Dechloromonas"|
+                 genus=="p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Rhodocyclaceae;g__Accumulibacter")
+pick$abundance[pick$abundance==0] <- NA
+pdf("figs/[please rename the picture name].pdf",
+    wi = 3.5, he = 3)
+    ggplot(pick, aes(x = sample, y = genome,
+                 size = abundance, color = abundance)) +
+  geom_point() +
+  #scale_size(limits = c(0,400),breaks = c(0,100,200,400)) +
+  scale_color_viridis_c() +
+  theme_bw() +
+  theme(axis.text.y.left = element_text(size = 3.5),
+        legend.text = element_text(size = 4),
+        axis.text.x.bottom = element_text(size = 4),
+        legend.key.height = unit(5, "pt"),
+        legend.key.width = unit(3, "pt"),
+        legend.background = element_blank(),
+        legend.title = element_blank(),
+        panel.grid = element_blank()) +
+  xlab(NULL) +
+  ylab(NULL)
+dev.off()
+# functional profile of denitrifiers (Fig. S2 right panel)
+func <- select(info, c(genome, NAP, NAR, NAS, NIR)) %>%
+  filter(NAR=="Yes"|NAP=="Yes"|NIR=="Yes") %>%
+  pivot_longer(-genome, values_to = "presence", names_to = "gene")
+func$presence[func$presence=="Yes"] <- 1
+pdf("figs/[renmae].pdf",
+    wi = 1.5, he = 8)
+ggplot(func, aes(x = gene, y = genome, color = presence)) +
+  geom_point() +
+  scale_size(limits = c(0,1),breaks = c(0, 1)) +
+  scale_color_brewer(palette = "Set2") +
+  theme_bw() +
+  theme(axis.text.y.left = element_text(size = 3.5),
+        legend.text = element_text(size = 4),
+        axis.text.x.bottom = element_text(size = 4),
+        legend.background = element_blank(),
+        legend.title = element_blank(),
+        panel.grid = element_blank()) +
+  xlab(NULL) +
+  ylab(NULL)
+dev.off()
+# sum of functional taxa (Fig.2cd upper panel)
+pdf("figs/[rename].pdf",
+    wi = 9, he = 3)
+ggplot(pick, aes(x = sample, y = abundance, fill = tax)) +
+  geom_col() +
+  theme_bw() +
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
+  scale_y_continuous(limits = c(0,200),
+                     expand = c(0, 0)) +
+  scale_fill_brewer(palette = "Set3")
+dev.off()
+```
+Note that we only show the ploting of microbes' abundance profiles.
+For ploting the performance of reactos in Fig.2ab, see [plot_performance.R] and [plot_Fig.S5.R].
 ### Functional annoation of MAGs and Metaproteome
 
 ### Enrichment analysis
