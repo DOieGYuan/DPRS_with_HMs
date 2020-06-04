@@ -8,8 +8,7 @@ R scripts to reproduce the figures in our paper are in Rscripts;
 Shell scripts to reproduce data processing in our paper are in Shellscripts;
 
 ## Install dependencies
-We recommond using .[Anaconda].
-(https://www.anaconda.com/) to install all the dependencies.
+We recommond using .[Anaconda].(https://www.anaconda.com/) to install all the dependencies.
 ```
 conda install -c bioconda megahit
 ```
