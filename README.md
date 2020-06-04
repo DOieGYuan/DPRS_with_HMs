@@ -101,6 +101,7 @@ megahit --k-list 25,31,41,51,61,71,81,101,121,141 -1 *_1.fq.gz -2 *_2.fq.gz -o a
 # estimate assembly quality
 quast -o quast --min-contig 200 --threads 64 Coasm.contigs.fa
 ```
+Now we obtain **[Coasm.contigs.fa](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB6248023)**.
 ### Binning
 Use our packaged [binning_wf.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.sh)
 ```
@@ -111,7 +112,8 @@ ln -s [reads directory]/*.fq.gz .
 chmod 775 binning_wf
 ./binning_wf.sh Coasm.fa [threads] # in our case, 64
 ```  
-Now we get high-quality metagenomic-assembled genomes (MAGs).
+Now we get **high-quality metagenomic-assembled genomes (MAGs)**.  
+Or, you can skip this time-consuming step by downloading MAGs from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB6626062/overview).
 ### Taonomic classification
 See [GTDBtk manual] for details in MAG taxonomic classification
 Here we use:
@@ -137,7 +139,7 @@ cat tree/dprs*92*.nwk | sed 's/\'//g' > TreeFile.nwk
 #calculate orthoANI
 java -jar OAU.jar -u usearch -fd ./ -n 64 -fmt matrix -o ANI.txt
 ```
-Now we get **[TreeFile.nwk]**(https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/TreeFile.nwk)  
+Now we get **[TreeFile.nwk](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/TreeFile.nwk)**  
 
 *(Optional step for Supplementary information Fig.S1)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
 Database is based on all the bacterial, algal and viral genomes download from NCBI. (Custom database construction see [kraken2's manual](https://ccb.jhu.edu/software/kraken2/index.shtml?t=manual))
@@ -147,6 +149,8 @@ do kraken2 --db NCBI_db/ --paired $f ${f%_1.fq.gz}_2.fq.gz \
   --threads 64 --report ${f%_1.fq.gz}.txt --use-mpa-style
 done
 ```
+*(Optional step for Supplementary information Fig.S1)* 16S rRNA DNA-based classification using [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get 16S-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
+
 
 ### Extract functional genes in MAGs
 Download our home-made referential database (.dmnd, hmm and original .fasta).  
