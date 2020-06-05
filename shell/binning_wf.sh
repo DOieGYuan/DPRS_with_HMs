@@ -1,10 +1,16 @@
-# usage: ./sh [assembly xxx.fasta or xxx.fa] [threads]
+# usage: source binning_wf.sh [assembly xxx.fasta or xxx.fa] [threads]
 # author DOieGYuan
 # Github: http://github/DOieGyuan/DPRS_with_HMs/
 echo "now building assembly index"
 test -e bz2/ || mkdir bz2
 #align using bowtie2
-bowtie2-build $1 bz2/asm --threads $2 
+nuc_num=`egrep -v ">" $1 | wc -c`
+sample_num=`ls *_1.fq.gz | wc -l`
+if (($nuc_num >= 4000000000)); then
+	bowtie2-build $1 bz2/asm --threads --large-index $2 
+else
+	bowtie2-build $1 bz2/asm --threads $2
+fi
 echo "align using bowtie2"
 for f in *_1.fq.gz
 do bowtie2 -1 $f -2 ${f%_1.fq.gz}_2.fq.gz -x bz2/asm -S ${f%_1.fq.gz}.sam -p $2
@@ -31,21 +37,41 @@ mkdir concoct_output
 merge_cutup_clustering.py concoct_clustering_gt1000.csv > concoct_output/clustering_merged.csv
 mkdir concoct_output/concoct_bins
 extract_fasta_bins.py $1 concoct_output/clustering_merged.csv --output_path concoct_output/concoct_bins/
-# maxbin2 (change below as needed)
+# maxbin2
 echo "binning by maxbin2"
-cut -f 1,4 depth_metabat.txt | sed '1d' > A1.coverage.tab
-cut -f 1,6 depth_metabat.txt | sed '1d' > A2.coverage.tab
-cut -f 1,8 depth_metabat.txt | sed '1d' > A3.coverage.tab
-cut -f 1,10 depth_metabat.txt | sed '1d' > A4.coverage.tab
-#cut -f 1,12 depth_metabat.txt | sed '1d' > A5.coverage.tab
-#cut -f 1,14 depth_metabat.txt | sed '1d' > A6.coverage.tab
-#cut -f 1,16 depth_metabat.txt | sed '1d' > A7.coverage.tab
-#cut -f 1,18 depth_metabat.txt | sed '1d' > A8.coverage.tab
-#cut -f 1,20 depth_metabat.txt | sed '1d' > A9.coverage.tab
-#cut -f 1,22 depth_metabat.txt | sed '1d' > A10.coverage.tab
-#cut -f 1,24 depth_metabat.txt | sed '1d' > A11.coverage.tab
-#cut -f 1,26 depth_metabat.txt | sed '1d' > A12.coverage.tab
-
+i=1
+sum=0
+while ((i <= sample_num))
+	do ((sum = 2*i+2))
+	cut -f 1,$sum depth_metabat.txt | sed '1d' > A${i%}.coverage.tab
+	((i++))
+done
 ls *coverage.tab > abundance.list
 mkdir maxbin
 run_MaxBin.pl -contig $1 -abund_list abundance.list -out maxbin/maxbin -thread $2 -min_contig_length 1000 -max_iteration 55
+mkdir maxbin2_bins
+mv maxbin/maxbin.*.fasta maxbin2_bins
+# clean workplace
+rm *.sam
+rm *.bam*
+rm concoct_*
+rm contigs_10K*
+rm abundance.list
+rm A*.coverage.tab
+rm *.fai
+rm -rf bz2
+rm -rf maxbin
+mv concoct_output/concoct_bins .
+rm -rf concoct_output
+conda activate metawrap
+# metaWrap
+echo "use metaWRAP to refine bins"
+metawrap bin_refinement -o metawrap -t $2 -m 120 -c 70 -x 10 -A maxbin2_bins -B metabat_binning -C concoct_bins
+mv metawrap/metawrap_*bins .
+rm -rf metawrap
+mv metawrap_*bins metawrap/
+zcat *_1.fq.gz > comb_1.fastq
+zcat *_2.fq.gz > comb_2.fastq
+# if need, change numbers behind -c and -x for controlling the MAGs' quality
+metawrap reassemble_bins -b metawrap -o reasm -1 comb_1.fastq -2 comb_2.fastq -c 70 -x 10 -t @2 -m 120 -l 500
+echo "binning workflow by DOieGYuan finished successfully"
