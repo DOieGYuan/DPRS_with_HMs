@@ -157,12 +157,13 @@ done
 ### Extract functional genes in MAGs
 Download our home-made referential database (.dmnd, hmm and original .fasta).  
 ```
-mv [directory]/*.dmnd .
-mv [directory]/*.hmm .
 # predict CDS by Prodigal
 for f in genomes/*.fa
-do prodigal -p single -i $f -a ${f%.fa}.faa
+do prodigal -p single -i $f -a aa/${f%.fa}.faa
 done
+cd aa/
+mv [directory]/*.dmnd .
+mv [directory]/*.hmm .
 ./Search_functional_genes_DIAMOND.sh # 1e-10 50 80 80
 ./Search_functional_genes_HMMER.sh 60
 ```
@@ -271,10 +272,281 @@ dev.off()
 Note that we only show the ploting of microbes' abundance profiles.  
 For ploting the performance of reactos in Fig.2ab, see [plot_performance.R](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/plot_performance.R) and [plot_Fig.S5.R](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/plot_Fig.S5.R).
 ### Functional annoation of MAGs and Metaproteome
+Please refer to [enrichM](https://github.com/geronimp/enrichM), [emapper](https://github.com/eggnogdb/eggnog-mapper), and [InterProScan](https://github.com/ebi-pf-team/interproscan) to have a more comprehensive understanding of their functions.  
+*(Optional) If need KEGG BRITE and KO annotation file, please install R package KEGGREST and use make.BRITE.formatted.R to formate the htext file into tabular .tsv file.*
+In our study, we perform the following pipeline:
+```
+mkdir annotation
+prodigal assembly/Coasm.fa -p meta -a genomes/aa/Coasm.faa
+cd annotation
 
+# enrichM annotation
+enrichm annotate --protein_directory ../genomes/aa --output enrichM \
+  --cpus 64 --parallel 64 --ko
+
+# emapper annotation
+mkdir emapper/
+cd emapper/
+download_eggnog_data.py --data_dir db -y -f bact arch
+ln -s ../genomes/aa/*.faa .
+for f in *.faa;
+do python emapper.py -i $f -o ${f%.faa} -d bact -m diamond --cpu 64 --data_dir db/ --usemem
+down
+cd ..
+
+# interproscan annotation
+mkdir interproscan
+cd interproscan
+ln -s ../genomes/aa/*.faa .
+for f in *.faa;
+do interproscan.sh -i $f -b ${f%.faa} -cpu 64 -d ./ -f TSV -goterms -hm -iprlookup -pa
+done
+```
+Now, we have metagenome and genomes annotated by enrichM, emapper and interproscan.  
+Combine all the annotation file and couple the **Additional file2** to get nitrifiers-specific and PAOs-specific functions.  
+Then, use plot_Fig.3b&S7.R to plot bubble plot to exhibit differentlt expressed functions in nitrifiers (Fig. 3b) and PAOs (Fig. S7)
+```
+setwd("/functional_genes")
+library(tidyverse)
+library(stringr)
+# Load DESeq2 resulting FC files
+Cd <- read_csv("Cd_DESeq2_IHW.csv") %>%
+  select(c(X1,log2FoldChange,padj)) %>%
+  rename(protein = X1, Cd_log2fc = log2FoldChange, Cd_padj = padj)
+Cr <- read_csv("Cr_DESeq2_IHW.csv") %>%
+  select(c(X1,log2FoldChange,padj)) %>%
+  rename(protein = X1, Cr_log2fc = log2FoldChange, Cr_padj = padj)
+Ni <- read_csv("Ni_DESeq2_IHW.csv") %>%
+  select(c(X1,log2FoldChange,padj)) %>%
+  rename(protein = X1, Ni_log2fc = log2FoldChange, Ni_padj = padj)
+log2fc <- left_join(Cd,Ni) %>% left_join(Cr)
+# Load KEGG category
+brite <- read_tsv("ko00001.aligned.formatted.txt") %>%
+  select(c(ko, L1, L2))
+# Load genome mapping file
+genome_file = "nitrifiers_genome.txt"
+map <- read_tsv("genome_mapped_by_proteins.tsv") %>%
+  select(c(ID2,genome,eggNOG,egg_annotation,ipr2,ipr_annotation,ko,description)) %>%
+  rename(ipr=ipr2,protein=ID2) %>%
+  filter(genome=="bin.181"|genome=="bin.95"|
+           genome=="bin.123"|genome=="bin.129"|
+           genome=="bin.194"|genome=="bin.46") %>%
+  write_tsv(genome_file)
+nit <- read_tsv(genome_file) %>% unique() %>%
+  left_join(log2fc)
+select <- is.na(nit$Cd_padj)&is.na(nit$Ni_padj)&is.na(nit$Cr_padj)|
+  (abs(nit$Cd_log2fc)<1)&(abs(nit$Ni_log2fc)<1)&(abs(nit$Cr_log2fc)<1)|
+  (nit$Cd_padj>=0.05)&(nit$Ni_padj>=0.05)&(nit$Cr_padj>=0.05)
+nit <- nit[!select,]
+nit$Cd_log2fc[nit$Cd_padj>0.05] <- NA
+nit$Ni_log2fc[nit$Ni_padj>0.05] <- NA
+nit$Cr_log2fc[nit$Cr_padj>0.05] <- NA
+wid <- select(nit, -c(Cd_padj, Ni_padj, Cr_padj)) %>%
+  pivot_wider(names_from = genome,
+              values_from = c(Cd_log2fc, Ni_log2fc, Cr_log2fc))
+wid <- left_join(wid, brite) %>% unique()
+wid <- wid[!duplicated(wid$protein),]
+write_tsv(wid, paste(genome_file, ".wider.txt", sep = ""))
+# Manually combine identical functionality
+
+# plot bubble
+wid <- read_tsv(paste(genome_file, ".wider.combined.txt", sep = ""))
+lon <- pivot_longer(wid, -c(No,eggNOG,egg_annotation,ipr,
+                            ipr_annotation,ko,description,
+                            L1,L2),
+                    names_to = "group",
+                    values_to = "foldchange") %>%
+  mutate(metal = str_sub(group, start = 1, end = 2))
+lon$group <- str_sub(lon$group, start = 11)
+lon$group <- factor(lon$group, levels = c("bin.181", "bin.95",
+                                          "bin.123", "bin.129",
+                                          "bin.194", "bin.46"))
+lon$metal <- factor(lon$metal, levels = c("Cd", "Ni", "Cr"))
+lon$foldchange[abs(lon$foldchange)<1] <- NA
+lon$foldchange[lon$foldchange > 8] <- 8
+lon$foldchange[lon$foldchange < -8] <- (-8)
+pdf(paste(genome_file, ".pdf", sep = ""), wi = 5, he = 4)
+ggplot(lon, aes(x = group, y = as_factor(No),
+                 size = abs(foldchange), color = foldchange)) +
+  geom_point() +
+  scale_colour_gradient2(low = "#104E8B",
+                         high = "#660000") +
+  theme_bw() +
+  theme(axis.text.y.left = element_text(size = 4),
+        legend.text = element_text(size = 4),
+        axis.text.x.bottom = element_text(size = 4),
+        legend.key.height = unit(8, "pt"),
+        legend.key.width = unit(3, "pt"),
+        legend.background = element_blank(),
+        legend.title = element_blank(),
+        panel.grid.major.x = element_blank()) +
+  xlab(NULL) +
+  ylab(NULL) +
+  facet_grid(.~metal)
+dev.off()
+
+#########
+# PAOs  #
+#########
+genome_file = "PAOs_genomes.txt"
+map <- read_tsv("genome_mapped_by_proteins.tsv") %>%
+  select(c(ID2,genome,eggNOG,egg_annotation,ipr2,ipr_annotation,ko,description)) %>%
+  rename(ipr=ipr2,protein=ID2) %>%
+  filter(genome=="bin.136"|genome=="bin.28"|
+           genome=="bin.163"|genome=="bin.256"|
+           genome=="bin.169"|genome=="bin.20"|
+           genome=="bin.105"|genome=="bin.165"|
+           genome=="bin.189"|genome=="bin.211"|
+           genome=="bin.137"|genome=="bin.44") %>%
+  write_tsv(genome_file)
+nit <- read_tsv(genome_file) %>% unique() %>%
+  left_join(log2fc)
+select <- is.na(nit$Cd_padj)&is.na(nit$Ni_padj)&is.na(nit$Cr_padj)|
+  (abs(nit$Cd_log2fc)<1)&(abs(nit$Ni_log2fc)<1)&(abs(nit$Cr_log2fc)<1)|
+  (nit$Cd_padj>=0.05)&(nit$Ni_padj>=0.05)&(nit$Cr_padj>=0.05)
+nit <- nit[!select,]
+nit$Cd_log2fc[nit$Cd_padj>0.05] <- NA
+nit$Ni_log2fc[nit$Ni_padj>0.05] <- NA
+nit$Cr_log2fc[nit$Cr_padj>0.05] <- NA
+wid <- select(nit, -c(Cd_padj, Ni_padj, Cr_padj)) %>%
+  pivot_wider(names_from = genome,
+              values_from = c(Cd_log2fc, Ni_log2fc, Cr_log2fc))
+wid <- left_join(wid, brite) %>% unique()
+wid <- wid[!duplicated(wid$protein),]
+write_tsv(wid, paste(genome_file, ".wider.txt", sep = ""))
+# Manually combine identical functionality
+wid <- read_tsv(paste(genome_file, ".wider.combined.txt", sep = "")) %>%
+  filter(L2=="09101 Carbohydrate metabolism"|
+           L2=="09102 Energy metabolism") %>%
+  mutate(L2="09102 Energy metabolism") %>%
+  left_join(read_tsv("ko00001.aligned.formatted.txt") %>%
+              select(c(ko, L1, L2, L3)))
+# write_tsv(wid, paste(genome_file, ".wider.txt", sep = ""))
+
+# plot bubble
+wid <- read_tsv(paste(genome_file, ".wider.txt", sep = ""))
+lon <- pivot_longer(wid, -c(No,eggNOG,egg_annotation,ipr,
+                            ipr_annotation,ko,description,
+                            L1,L2,L3),
+                    names_to = "group",
+                    values_to = "foldchange") %>%
+  mutate(metal = str_sub(group, start = 1, end = 2))
+lon$group <- str_sub(lon$group, start = 11)
+lon$group <- factor(lon$group, levels = c("bin.136", "bin.28",
+                                          "bin.163", "bin.256",
+                                          "bin.169", "bin.20",
+                                          "bin.105", "bin.165",
+                                          "bin.189", "bin.211",
+                                          "bin.137", "bin.44"))
+lon$metal <- factor(lon$metal, levels = c("Cd", "Ni", "Cr"))
+lon$foldchange[abs(lon$foldchange) < 1] <- NA
+lon$foldchange[lon$foldchange > 8] <- 8
+lon$foldchange[lon$foldchange < -8] <- (-8)
+pdf(paste(genome_file, ".pdf", sep = ""), wi = 7, he = 12)
+ggplot(lon, aes(x = group, y = as_factor(No),
+                size = abs(foldchange), color = foldchange)) +
+  geom_point() +
+  scale_colour_gradient2(low = "#104E8B",
+                         high = "#660000") +
+  theme_bw() +
+  theme(axis.text.y.left = element_text(size = 4),
+        legend.text = element_text(size = 4),
+        axis.text.x.bottom = element_text(size = 4),
+        legend.key.height = unit(8, "pt"),
+        legend.key.width = unit(3, "pt"),
+        legend.background = element_blank(),
+        legend.title = element_blank(),
+        panel.grid.major.x = element_blank()) +
+  xlab(NULL) +
+  ylab(NULL) +
+  facet_grid(.~metal)
+dev.off()
+```
 ### Enrichment analysis
+We highly recommond users following the [offical document]((https://www.gsea-msigdb.org/gsea/)) to conduct this step, GSEA has excellent UI and easy to use.  
+Here, we provide our study as an example.  
+* Use prepare_GMT.R to make GMT file and format the expression data as required.
+* Pre-rank the expression list.
+* Launch the analysis.
+* Visualize in Cytoscape, and output the node files and edge files.
+* Fill in information (for mapping) for reload into cytoscape.
+* Make the network clear
+* Output the network
+Now we have **Fig.5**.
 
 ### Co-occurence network
+Construct the network using CoNet.Please refer to the manual provided by the author.  
+Export the edge list.
+Draw Fig. 6ab using plot_Fig.6ab.R and plot_Fig.6c.R
+```
+setwd("your directory")
+vignette(topic = "ggalluvial", package = "ggalluvial")
+library(tidyverse)
+library(ggalluvial)
+edge <- read_csv("FDR0.05.edge.csv") %>%
+  select(Source,Target,interactionType)
+tax <- read_tsv("MAG_info.txt") %>%
+  select(genome,phylum,tax) %>%
+  rename(Target=genome)
+# find all interactions of specific genus and put them onto the first col
+genus <- "Ca.Accumulibacter"
+ls <- tibble(c("MAG-136", "MAG-163", "MAG-169", "MAG-105",
+        "MAG-256", "MAG-20","MAG-28"))
+genus <- "Dechloromonas"
+ls <- tibble(c("MAG-137", "MAG-165", "MAG-189", "MAG-211",
+               "MAG-44"))
+genus <- "Pseudoxanthomonas"
+ls <- tibble(c("MAG-154"))
+genus <- "Methyloversatilis"
+ls <- tibble(c("MAG-56"))
+genus <- "Zoogloea"
+ls <- tibble(c("MAG-263"))
+genus <- "Rubrivivax"
+ls <- tibble(c("MAG-41","MAG-55","MAG-219","MAG-262"))
+genus <- "Sphingopyxis"
+ls <- tibble(c("MAG-104", "MAG-164"))
+genus <- "Competibacter"
+ls <- tibble(c("MAG-125", "MAG-192"))
+genus <- "Nitrospira"
+ls <- filter(tax, phylum=="Nitrospirae") %>% select(Target)
+genus <- "Proteobacteria"
+ls <- filter(tax, phylum==genus) %>% select(Target)
+genus <- "Bacteroidetes"
+ls <- filter(tax, phylum==genus) %>% select(Target)
+genus <- "Planctomycetes"
+ls <- filter(tax, phylum==genus) %>% select(Target)
+genus <- "Taibaiella"
+ls <- tibble(c("MAG-10", "MAG-2", "MAG-63", "MAG-72"))
+genus <- "Planctomycetes_UBA2386"
+ls <- tibble(c("MAG-90", "MAG-237", "MAG-184"))
+
+names(ls) <- "Source"
+ft1 <- left_join(ls,edge) %>% na.omit()
+names(ls) <- "Target"
+ft2 <- left_join(ls,edge) %>% select(Target, Source, interactionType) %>% na.omit()
+names(ft2) <- c("Source", "Target", "interactionType")
+ft <- rbind(ft1,ft2) %>% unique()
+# taxonomy of "Target"
+ft <- left_join(ft,tax)
+# format for plot
+dat <- ft %>% group_by(interactionType, phylum) %>%
+  summarise(n=n())
+# plot
+pdf(paste(genus,"pdf",sep = "."),wi = 3,he = 2)
+ggplot(dat, aes(y = n,
+                axis1 = interactionType, axis2 = phylum)) +
+  geom_alluvium(aes(fill = phylum), width = 1/12) +
+  geom_stratum(width = 1/6) +
+  #geom_label(stat = "stratum", label.strata = TRUE, label.size = .5) +
+  scale_x_discrete(limits = c("Int", "Phylum"), expand = c(0, 0)) +
+  scale_fill_brewer(palette = "Set3") +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw() +
+  theme(text = element_text(size = 6),
+        legend.key.height = unit(5, "pt"),
+        legend.key.width = unit(3, "pt"))
+dev.off()
+```
 Finally, we finish **Fig.6**.
 
 **Due to the complexity of bioinformatic analysis in this study, we are still updating this document but we will finish this before publish.**
