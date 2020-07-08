@@ -1,5 +1,7 @@
-# Reproduce the results in our paper [Unpublished]
-This study focuses on the taxon-specifc heavy metal resistance in denitrifying phosphorus removal sludge
+# Reproduce the bioinformatics results in our paper [Unpublished]
+This study focuses on the taxon-specifc heavy metal resistance in denitrifying phosphorus removal sludge.  
+The background and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
+  
 ## Main contents in this repository
 Home-made functional genes database is deposited in [Database](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Database) filefold (both .fasta, .dmnd and .hmm);  
 Raw data are in folder [Raw_data](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rawdata);  
@@ -65,7 +67,8 @@ We encourage readers to use aboved software to process our data to see whether d
 ## Work flow
 ### Download raw data
 see **Data availability** section in our paper to download raw data.  
-Note that this work flow can also be applied to other data by renaming the paired-end sequences in the form of `[sample_name1]_1.fq.gz` and `[sample_name1]_2.fq.gz`
+Note that this work flow can also be applied to other data by renaming the paired-end sequences in the form of `[sample_name1]_1.fq.gz` and `[sample_name1]_2.fq.gz`  
+*[] means you may need to change the content manually accordingly*
 ### Quality control
 ```
 cd [reads folder in your work station]
@@ -547,6 +550,7 @@ ggplot(dat, aes(y = n,
         legend.key.width = unit(3, "pt"))
 dev.off()
 ```
-Finally, we finish **Fig.6**.
-
-**Due to the complexity of bioinformatic analysis in this study, we are still updating this document but we will finish this before publishment.**
+Finally, we finish **Fig.6**.  
+  
+Now we have finished the majority of the analyses in our paper.  
+*Due to the complexity of bioinformatic analysis in this study, we are still updating this document but we will finish this before publishing.*
