@@ -7,7 +7,7 @@ test -e bz2/ || mkdir bz2
 nuc_num=`egrep -v ">" $1 | wc -c`
 sample_num=`ls *_1.fq.gz | wc -l`
 if (($nuc_num >= 4000000000)); then
-	bowtie2-build $1 bz2/asm --threads --large-index $2 
+	bowtie2-build $1 bz2/asm --threads $2 --large-index 
 else
 	bowtie2-build $1 bz2/asm --threads $2
 fi
