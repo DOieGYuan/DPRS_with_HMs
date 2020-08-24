@@ -553,4 +553,7 @@ dev.off()
 Finally, we finish **Fig.6**.  
   
 Now we have finished the majority of the analyses in our paper.  
-*Due to the complexity of bioinformatic analysis in this study, we are still updating this document but we will finish this before publishing.*
+*The metagenomic workflow can be finished easily by using our developing [pipeline](https://github.com/DOieGYuan/Easy-genomic-centric-metagenomics-pipepline) with single command*
+
+## Contact Us
+Please feel free to contact linyuan@smail.nju.edu.cn
