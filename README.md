@@ -7,7 +7,7 @@ Home-made functional genes database is deposited in [Database](https://github.co
 Raw data are in folder [Raw_data](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rawdata);  
 R scripts to reproduce the figures in our paper are in [Rscripts](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rscripts);  
 Shell scripts to reproduce data processing in our paper are in [Shellscripts](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/shell).  
-* **[Install dependencies]**(https://github.com/DOieGYuan/DPRS_with_HMs#install-dependencies)
+* **[Install dependencies](https://github.com/DOieGYuan/DPRS_with_HMs#install-dependencies)**
 * [quality control](https://github.com/DOieGYuan/DPRS_with_HMs#quality-control)
 * [Assembly](https://github.com/DOieGYuan/DPRS_with_HMs#assembly)
 * [Binning](https://github.com/DOieGYuan/DPRS_with_HMs#binning)
@@ -18,7 +18,7 @@ Shell scripts to reproduce data processing in our paper are in [Shellscripts](ht
 * [Enrichment analysis](https://github.com/DOieGYuan/DPRS_with_HMs#enrichment-analysis)
 * [Co-occurence network](https://github.com/DOieGYuan/DPRS_with_HMs#co-occurence-network)
 * [Metaproteomic analysis](https://github.com/DOieGYuan/DPRS_with_HMs#metaproteomic-analysis)
-* **[Work flow]**(https://github.com/DOieGYuan/DPRS_with_HMs#work-flow)
+* **[Work flow](https://github.com/DOieGYuan/DPRS_with_HMs#work-flow)**
 * [Download raw data](https://github.com/DOieGYuan/DPRS_with_HMs#download-raw-data)
 * [Quality control](https://github.com/DOieGYuan/DPRS_with_HMs#quality-control-1)
 * [Assembly](https://github.com/DOieGYuan/DPRS_with_HMs#assembly-1)
@@ -30,7 +30,7 @@ Shell scripts to reproduce data processing in our paper are in [Shellscripts](ht
 * [Functional annoation of MAGs and Metaproteome](https://github.com/DOieGYuan/DPRS_with_HMs#functional-annoation-of-mags-and-metaproteome)
 * [Enrichment analysis](https://github.com/DOieGYuan/DPRS_with_HMs#enrichment-analysis-1)
 * [Co-occurence network](https://github.com/DOieGYuan/DPRS_with_HMs#co-occurence-network-1)
-* **[Contact Us]**(https://github.com/DOieGYuan/DPRS_with_HMs#contact-us)
+* **[Contact Us](https://github.com/DOieGYuan/DPRS_with_HMs#contact-us)**
 
 ## Install dependencies
 All the processes were performed on ubuntu 16.04LTS OS.
