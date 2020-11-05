@@ -182,7 +182,12 @@ done
 *(Optional step for Supplementary information Fig.S1)* 16S rRNA DNA-based classification using [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get 16S-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
 
 
-### Extract functional genes in MAGs
+### Extract functional genes
+**in co-assembled metagenome**  
+```
+prodigal -a Coasm.faa -d Coasm.fna -i Coasm.fa -p meta
+```
+**in MAGs**  
 Download our home-made referential database (.dmnd, hmm and original .fasta).  
 ```
 # predict CDS by Prodigal
