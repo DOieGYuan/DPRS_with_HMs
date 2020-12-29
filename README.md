@@ -1,10 +1,10 @@
-# Reproduce the bioinformatics results in our paper [Unpublished]
-This study focuses on the taxon-specifc heavy metal resistance in denitrifying phosphorus removal sludge.  
-The background and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
+# Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [Unpublished]
+Follow this step-by-step guidance to reproduce the bioinformatics results in our paper.  
+The background, significance, and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
   
 ## Main contents in this repository
-Home-made functional genes database is deposited in [Database](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Database) filefold (both .fasta, .dmnd and .hmm);  
-Raw data are in folder [Raw_data](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rawdata);  
+Functional genes references (.fasta and .dmnd files) are deposited in [Database](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Database);  
+Raw data, intermediate files (if applicable) and final results are in folder [Data](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Data);  
 R scripts to reproduce the figures in our paper are in [Rscripts](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Rscripts);  
 Shell scripts to reproduce data processing in our paper are in [Shellscripts](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/shell).  
 * **[Install dependencies](https://github.com/DOieGYuan/DPRS_with_HMs#install-dependencies)**
