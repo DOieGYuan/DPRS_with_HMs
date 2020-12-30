@@ -143,22 +143,22 @@ quast -o quast --min-contig 1000 --threads 64 Coasm.contigs.fa
 conda deactivate
 cd -
 ```
-Now we obtain **[Coasm.contigs.fa](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB6248023)**.
+Now we obtain **[Coasm.contigs.fa](https://ndownloader.figshare.com/files/25915446)**.
 ### Binning
 Use our packaged [binning_wf.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.sh)
 ```
 conda activate binning
 mkdir binning
 cd binning
-ln -s ../assembly/Coasm.fa .
+ln -s ../assembly/Coasm.contigs.fa .
 ln -s [reads directory]/*.fq.gz .
 chmod 775 binning_wf
 ./binning_wf.sh Coasm.fa [threads] # in our case, 64
 conda deactivate
 ```
 Details for binning see [here](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.md)
-Now we get **High- or medium-quality metagenomic-assembled genomes (MAGs)**.  
-Or, you can skip this time-consuming step by downloading MAGs from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB6626062/overview).
+Now we get **MIMAG High- or medium-quality metagenomic-assembled genomes (MAGs)**.  
+Or, skip this time-consuming step by downloading MAGs (entitled "new MAG-xxx") from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB8814347).
 ### Taonomic classification
 See [GTDBtk manual](https://ecogenomics.github.io/GTDBTk/) for details in MAG taxonomic classification
 Here we use:
@@ -169,8 +169,27 @@ cp -r metawrap/reasm/reassembled_bins/ genomes/
 gtdbtk classify_wf --genome_dir genomes --out_dir GTDBtk_tax --cpus 64
 conda deactivate
 ```
-Now we have the taxonomic information for each MAG.
-Then we build Phylogenetic tree for MAGs using UBCG pipeline
+Now we have the GTDB taxonomic information for each MAG.  
+Convert it into NCBI taxonomy [using gtdb_vs_ncbi_r95_bacteria.xlsx](https://data.ace.uq.edu.au/public/gtdb/data/releases/release95/95.0/auxillary_files/gtdb_vs_ncbi_r95_bacteria.xlsx) using [Convert_GTDB2NCBI.R](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rscripts/Convert_GTDB2NCBI.R)
+### Determine the quality of MAGs
+Estimate the completeness and contamination
+```
+conda activate binning
+checkm lineage_wf -t 12 -x fa ./ ./checkm_qa > bin_quality.log
+```
+Estimate the presence of tRNAs and rRNAs using [How_many_tRNA.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/How_many_tRNA.sh) and [Who_has_rRNA.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/Who_has_rRNA.sh), or manually,
+```
+# scan rRNA
+conda activate binning
+for f in *.fa;do cmscan --cpu 12 --rfam --cut_ga --nohmmonly --tblout ../cmscan_results/${f%.fa}.cmscan.txt --fmt 2 --clanin ../Rfam.clanin /media/linyuan/HD_Files/Database/Rfam/Rfam.cm $f;done
+
+# scan tRNA
+conda activate 16s
+for f in *.fa;do tRNAscan-SE -B --brief --thread 12 -o ../trnascan_results/${f%.fa}.trna.txt $f;done
+```
+Based on the above information, MAGs are catergoried into high-quality (completeness > 90%, contamination < 5%, presence of the 23S, 16S, 5S rRNA genes, and at least 18 tRNAs), medium-quality (completeness ≥ 50% and contamination < 10%), and low-quality (the rest) based on the [MIMAG standard](doi.org/10.1038/nbt.3893). Only MAGs meet with the high- or metdium quality and has a quality score ≥ 45 (defined as completeness− 5× contamination) were included in the downstream analysis.
+### Phylogenetic tree
+Build Phylogenetic tree for MAGs using UBCG pipeline
 ```
 mkdir UBCG
 cd ubcg
@@ -183,10 +202,10 @@ cat tree/dprs*92*.nwk | sed 's/\'//g' > TreeFile.nwk
 #calculate orthoANI
 java -jar OAU.jar -u usearch -fd ./ -n 64 -fmt matrix -o ANI.txt
 ```
-Now we get **[TreeFile.nwk](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/TreeFile.nwk)**  
+Now we get **[TreeFile.nwk](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Data/iTOL_PhylogeneticTree/TreeFile.nwk)**  
 Upload the .nwk file onto the iTOL online system to construct a phylogenetic tree.  
 
-*(Optional step for Supplementary information Fig.S1)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
+*(Optional)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
 Database is based on all the bacterial, algal and viral genomes download from NCBI. (Custom database construction see [kraken2's manual](https://ccb.jhu.edu/software/kraken2/index.shtml?t=manual))
 ```
 for f in *_1.fq.gz
@@ -194,7 +213,7 @@ do kraken2 --db NCBI_db/ --paired $f ${f%_1.fq.gz}_2.fq.gz \
   --threads 64 --report ${f%_1.fq.gz}.txt --use-mpa-style
 done
 ```
-*(Optional step for Supplementary information Fig.S1)* 16S rRNA DNA-based classification using [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get 16S-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
+**(Supplementary information Fig.S1)** ribosomal protein gene-based classification by [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get 16S-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
 
 
 ### Extract functional genes

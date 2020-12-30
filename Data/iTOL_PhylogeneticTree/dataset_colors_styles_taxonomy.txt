@@ -1,0 +1,116 @@
+TREE_COLORS
+#use this template to define branch colors and styles, colored ranges and	label	colors/font styles/backgrounds
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+
+SEPARATOR TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#First 3 fields define the node, type and color
+#Possible types are:
+#'range': defines a colored range (colored background for labels/clade)
+#'clade': defines color/style for all branches in a clade
+#'branch': defines color/style for a single branch
+#'label': defines font color/style for the leaf label
+#'label_background': defines the leaf	label	background color
+
+#The following additional fields are required:
+#for 'range', field 4 defines the colored range	label	(used in the legend)
+
+#The following additional fields are optional:
+#for 'label', field 4 defines the font style ('normal',''bold', 'italic' or 'bold-italic') and field 5 defines the numeric scale factor for the font size (eg. with value 2, font size for that	label	will be 2x the standard size)
+#for 'clade' and 'branch', field 4 defines the branch style ('normal' or 'dashed') and field 5 defines the branch width scale factor (eg. with value 0.5, branch width for that	clade	will be 0.5 the standard width)
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+#NODE_ID TYPE COLOR LABEL_OR_STYLE SIZE_FACTOR
+
+#Examples
+#internal node with solid branches colored blue and twice the standard width
+#9031|9606	clade	#0000ff normal 2
+#internal node with dashed branches colored red and one half the standard width
+#601|340	clade	#ff0000 dashed 0.5
+#a single internal branch colored green, dashed and 5 times the normal width
+#915|777 branch #00ff00 dashed 5
+
+#colored range covering all leaves of an internal node,  colored red and with	label	'Eukaryota'
+#184922|9606 range #ff0000 Eukaryota
+#examples of colored ranges from iTOL's Tree of Life
+#2190|2287 range #aaffaa Archaea
+#623|1502 range #aaaaff Bacteria
+
+#leaf	label	for node 9606 will be displayed in green, bold and twice the regular font size
+#9606	label	#00ff00 normal	1
+
+#leaf	label	for node 9031 will be displayed in yellow, bold italic and half the regular font size
+#9031	label	#ffff00 bold-italic 0.5
+
+#leaf	label	for node 8015 will be displayed in blue
+#8015	label	#0000ff
+
+#leaf	label	for node 9606 will have a semi-transparent red background
+#9606 label_background rgba(255,0,0,0.5)
+
+##My data
+#Alphaproteobacteria
+MAG-94|MAG-155	clade	rgb(255,255,179)	normal	1
+MAG-94|MAG-155	range	rgb(255,255,179)	Alphaproteobacteria
+#Betaproteobacteria
+MAG-156|MAG-224	clade	rgb(190,186,218)	normal	1
+MAG-156|MAG-224	range	rgb(190,186,218)	Betaproteobacteria
+#Gammaproteobacteria
+MAG-225|MAG-240	clade	rgb(252,205,229)	normal	1
+MAG-225|MAG-240	range	rgb(252,205,229)	Gammaproteobacteria
+#Deltaproteobacteria
+MAG-72|MAG-93	clade	rgb(253,180,93)	normal	1
+MAG-72|MAG-93	range	rgb(253,180,93)	Deltaproteobacteria
+#Bacteroidetes
+MAG-307|MAG-394	clade	rgb(128,177,211)	normal	1
+MAG-307|MAG-394	range	rgb(128,177,211)	Bacteroidetes
+#Chitinophagia
+#MAG-342|MAG-394	clade	rgb(251,128,114)	normal	1
+#Flavobacteriia
+#MAG-310|MAG-341	clade	rgb(179,222,109)	normal	1
+#Actinobacteria(phylum&class)
+MAG-69|MAG-71	clade	rgb(141,211,199)	normal	1
+MAG-69|MAG-71	range	rgb(141,211,199)	Actinobacteria
+#Nitrospira
+MAG-285|MAG-289	clade	rgb(217,217,217)	normal	1
+MAG-285|MAG-289	range	rgb(217,217,217)	Nitrospira
+#Ignavibacteria(Phylum)
+#MAG-47	label	#ff6600	normal	1
+#Oligoflexia (class)
+MAG-397|MAG-402	clade	#ff0000	normal	1
+MAG-397|MAG-402	range	#ff0000	Oligoflexia
+#Verrucomicrobia(phylum)
+MAG-1|MAG-18	clade	#ff0066	normal	1
+MAG-1|MAG-18	range	#ff0066	Verrucomicrobia
+#Acidobacteria(phylum)
+MAG-241|MAG-257	clade	#cc00ff	normal	1
+MAG-241|MAG-257	range	#cc00ff	Acidobacteria
+#(phylum)
+#MAG-261|MAG-277	clade	#000000	normal	1
+#Sphingobacteriia
+#MAG-33	label	#ffff00	normal	1
+#Planctomycetes(phylum)
+MAG-19|MAG-61	clade	#7d26cd	normal	1
+MAG-19|MAG-61	range	#7d26cd	Planctomycetes
+#Chloroflexi(phylum)
+MAG-261|MAG-277	clade	#666600	normal	1
+MAG-261|MAG-277	range	#666600	Chloroflexi
+#Gemmatimonadetes(phylum&class)
+MAG-64|MAG-68	clade	#008b00	normal	1
+MAG-64|MAG-68	range	#008b00	Gemmatimonadetes
+#Armatimonadetes(phylum)
+MAG-278|MAG-283	clade	#cc0066	normal	1
+MAG-278|MAG-283	range	#cc0066	Armatimonadetes
+#Bacteroidia
+#MAG-307|MAG-309	clade	#33ccff	normal	1

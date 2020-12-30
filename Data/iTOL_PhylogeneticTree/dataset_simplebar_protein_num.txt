@@ -1,0 +1,483 @@
+DATASET_SIMPLEBAR
+#In simple bar charts, each ID is associated to a single numeric value which is displayed as a bar outside the tree.
+#lines starting with a hash are comments and ignored during parsing
+
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+SEPARATOR TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	Identified proteins
+
+#dataset color (can be changed later)
+COLOR	#ff0066
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+#dataset scale: you can simply set the values where the scale will be drawn
+DATASET_SCALE	50	100	150
+#or you can specify value, label, color, width, style and label size factor for each scale line (dash separated, format: VALUE-LABEL-COLOR-WIDTH-DASHED-LABEL_SCALE_FACTOR)) 
+#DATASET_SCALE,2000-2k line-#0000ff-5-1-1,10000-line at 10k-#ff0000-1-0-2,20000-3rd line-#00ff00-5-1-1
+
+#each dataset can have a legend, which is defined below
+#for each row in the legend, there should be one shape, color and label
+#shape should be a number between 1 and 6:
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+#all other optional settings can be set or changed later in the web interface (under 'Datasets' tab)
+
+#maximum width
+WIDTH	250
+
+#left margin, used to increase/decrease the spacing to the next dataset. Can be negative, causing datasets to overlap.
+MARGIN	20
+
+#always show internal values; if set, values associated to internal nodes will be displayed even if these nodes are not collapsed. It could cause overlapping in the dataset display.
+#SHOW_INTERNAL	0
+
+#bar height factor; Default bar height will be slightly less than the available space between leaves, but you can set a multiplication factor here to increase/decrease it (values from 0 to 1 will decrease it, values above 1 will increase it)
+HEIGHT_FACTOR	1.2
+
+#Display individual values above the bars
+#SHOW_VALUE	0
+
+#Bars are aligned to the node lines by default. Using BAR_SHIFT, you can move them all up/down by a fixed amount
+#BAR_SHIFT	0
+
+#BAR_ZERO specifies which dataset value will be used as a starting point for drawing the bars. Dataset values smaller than BAR_ZERO will be displayed to the left (possibly overlapping the tree, unless MARGIN is increased)
+#BAR_ZERO	0
+
+#border width; if set above 0, a border of specified width (in pixels) will be drawn around the bars
+#BORDER_WIDTH	0
+
+#border color; used when BORDER_WIDTH is above 0
+#BORDER_COLOR	#0000ff
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+DATA
+MAG-1	0
+MAG-2	0
+MAG-3	0
+MAG-4	1
+MAG-5	0
+MAG-6	1
+MAG-7	0
+MAG-8	0
+MAG-9	0
+MAG-10	0
+MAG-11	0
+MAG-12	0
+MAG-13	0
+MAG-14	0
+MAG-15	0
+MAG-16	1
+MAG-17	0
+MAG-18	0
+MAG-19	0
+MAG-20	0
+MAG-21	0
+MAG-22	0
+MAG-23	0
+MAG-24	0
+MAG-25	0
+MAG-26	0
+MAG-27	0
+MAG-28	0
+MAG-29	0
+MAG-30	0
+MAG-31	0
+MAG-32	0
+MAG-33	0
+MAG-34	0
+MAG-35	0
+MAG-36	1
+MAG-37	0
+MAG-38	1
+MAG-39	0
+MAG-40	1
+MAG-41	0
+MAG-42	0
+MAG-43	1
+MAG-44	1
+MAG-45	0
+MAG-46	0
+MAG-47	0
+MAG-48	2
+MAG-49	0
+MAG-50	0
+MAG-51	0
+MAG-52	0
+MAG-53	0
+MAG-54	0
+MAG-55	0
+MAG-56	0
+MAG-57	0
+MAG-58	1
+MAG-59	0
+MAG-60	0
+MAG-61	0
+MAG-62	0
+MAG-63	0
+MAG-64	0
+MAG-65	0
+MAG-66	1
+MAG-67	1
+MAG-68	1
+MAG-69	0
+MAG-70	0
+MAG-71	1
+MAG-72	0
+MAG-73	0
+MAG-74	0
+MAG-75	0
+MAG-76	0
+MAG-77	0
+MAG-78	0
+MAG-79	0
+MAG-80	0
+MAG-81	0
+MAG-82	0
+MAG-83	0
+MAG-84	0
+MAG-85	0
+MAG-86	0
+MAG-87	0
+MAG-88	0
+MAG-89	0
+MAG-90	0
+MAG-91	0
+MAG-92	0
+MAG-93	0
+MAG-94	0
+MAG-95	0
+MAG-96	0
+MAG-97	0
+MAG-98	1
+MAG-99	0
+MAG-100	0
+MAG-101	0
+MAG-102	0
+MAG-103	2
+MAG-104	2
+MAG-105	0
+MAG-106	1
+MAG-107	2
+MAG-108	1
+MAG-109	1
+MAG-110	0
+MAG-111	0
+MAG-112	0
+MAG-113	0
+MAG-114	0
+MAG-115	0
+MAG-116	2
+MAG-117	0
+MAG-118	10
+MAG-119	12
+MAG-120	48
+MAG-121	55
+MAG-122	0
+MAG-123	7
+MAG-124	8
+MAG-125	4
+MAG-126	4
+MAG-127	1
+MAG-128	2
+MAG-129	2
+MAG-130	6
+MAG-131	0
+MAG-132	2
+MAG-133	130
+MAG-134	54
+MAG-135	2
+MAG-136	5
+MAG-137	3
+MAG-138	9
+MAG-139	3
+MAG-140	13
+MAG-141	2
+MAG-142	1
+MAG-143	3
+MAG-144	1
+MAG-145	2
+MAG-146	1
+MAG-147	1
+MAG-148	4
+MAG-149	3
+MAG-150	1
+MAG-151	0
+MAG-152	0
+MAG-153	1
+MAG-154	0
+MAG-155	0
+MAG-156	4
+MAG-157	4
+MAG-158	6
+MAG-159	3
+MAG-160	2
+MAG-161	3
+MAG-162	3
+MAG-163	0
+MAG-164	3
+MAG-165	2
+MAG-166	19
+MAG-167	52
+MAG-168	16
+MAG-169	13
+MAG-170	6
+MAG-171	7
+MAG-172	21
+MAG-173	8
+MAG-174	8
+MAG-175	21
+MAG-176	49
+MAG-177	93
+MAG-178	115
+MAG-179	30
+MAG-180	39
+MAG-181	64
+MAG-182	212
+MAG-183	237
+MAG-184	13
+MAG-185	16
+MAG-186	39
+MAG-187	15
+MAG-188	17
+MAG-189	12
+MAG-190	70
+MAG-191	122
+MAG-192	141
+MAG-193	103
+MAG-194	68
+MAG-195	9
+MAG-196	17
+MAG-197	80
+MAG-198	41
+MAG-199	70
+MAG-200	43
+MAG-201	333
+MAG-202	266
+MAG-203	155
+MAG-204	12
+MAG-205	4
+MAG-206	20
+MAG-207	25
+MAG-208	22
+MAG-209	357
+MAG-210	18
+MAG-211	5
+MAG-212	12
+MAG-213	10
+MAG-214	8
+MAG-215	5
+MAG-216	5
+MAG-217	2
+MAG-218	3
+MAG-219	9
+MAG-220	6
+MAG-221	8
+MAG-222	55
+MAG-223	1
+MAG-224	4
+MAG-225	3
+MAG-226	9
+MAG-227	32
+MAG-228	5
+MAG-229	5
+MAG-230	192
+MAG-231	4
+MAG-232	2
+MAG-233	13
+MAG-234	9
+MAG-235	10
+MAG-236	5
+MAG-237	2
+MAG-238	0
+MAG-239	2
+MAG-240	0
+MAG-241	0
+MAG-242	0
+MAG-243	2
+MAG-244	0
+MAG-245	2
+MAG-246	1
+MAG-247	0
+MAG-248	1
+MAG-249	0
+MAG-250	0
+MAG-251	0
+MAG-252	1
+MAG-253	0
+MAG-254	0
+MAG-255	0
+MAG-256	0
+MAG-257	0
+MAG-258	0
+MAG-259	0
+MAG-260	0
+MAG-261	1
+MAG-262	0
+MAG-263	0
+MAG-264	0
+MAG-265	0
+MAG-266	0
+MAG-267	1
+MAG-268	0
+MAG-269	1
+MAG-270	0
+MAG-271	0
+MAG-272	0
+MAG-273	1
+MAG-274	0
+MAG-275	0
+MAG-276	0
+MAG-277	0
+MAG-278	1
+MAG-279	0
+MAG-280	0
+MAG-281	0
+MAG-282	0
+MAG-283	0
+MAG-284	1
+MAG-285	22
+MAG-286	20
+MAG-287	25
+MAG-288	10
+MAG-289	26
+MAG-290	0
+MAG-291	0
+MAG-292	0
+MAG-293	0
+MAG-294	0
+MAG-295	0
+MAG-296	0
+MAG-297	0
+MAG-298	0
+MAG-299	0
+MAG-300	1
+MAG-301	0
+MAG-302	1
+MAG-303	0
+MAG-304	0
+MAG-305	0
+MAG-306	1
+MAG-307	0
+MAG-308	2
+MAG-309	0
+MAG-310	0
+MAG-311	0
+MAG-312	0
+MAG-313	0
+MAG-314	0
+MAG-315	0
+MAG-316	0
+MAG-317	0
+MAG-318	0
+MAG-319	0
+MAG-320	0
+MAG-321	0
+MAG-322	0
+MAG-323	1
+MAG-324	0
+MAG-325	0
+MAG-326	0
+MAG-327	0
+MAG-328	0
+MAG-329	0
+MAG-330	0
+MAG-331	0
+MAG-332	0
+MAG-333	0
+MAG-334	0
+MAG-335	0
+MAG-336	0
+MAG-337	0
+MAG-338	0
+MAG-339	5
+MAG-340	58
+MAG-341	3
+MAG-342	10
+MAG-343	6
+MAG-344	10
+MAG-345	2
+MAG-346	3
+MAG-347	2
+MAG-348	3
+MAG-349	23
+MAG-350	7
+MAG-351	20
+MAG-352	23
+MAG-353	0
+MAG-354	0
+MAG-355	0
+MAG-356	0
+MAG-357	0
+MAG-358	0
+MAG-359	2
+MAG-360	0
+MAG-361	0
+MAG-362	0
+MAG-363	0
+MAG-364	0
+MAG-365	0
+MAG-366	1
+MAG-367	0
+MAG-368	1
+MAG-369	0
+MAG-370	1
+MAG-371	0
+MAG-372	0
+MAG-373	7
+MAG-374	12
+MAG-375	3
+MAG-376	1
+MAG-377	0
+MAG-378	3
+MAG-379	2
+MAG-380	1
+MAG-381	0
+MAG-382	0
+MAG-383	1
+MAG-384	2
+MAG-385	1
+MAG-386	1
+MAG-387	3
+MAG-388	6
+MAG-389	2
+MAG-390	14
+MAG-391	0
+MAG-392	4
+MAG-393	0
+MAG-394	1
+MAG-395	0
+MAG-396	0
+MAG-397	0
+MAG-398	0
+MAG-399	0
+MAG-400	0
+MAG-401	0
+MAG-402	0
+MAG-403	2

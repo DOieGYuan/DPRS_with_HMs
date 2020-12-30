@@ -1,0 +1,487 @@
+DATASET_SYMBOL
+#Symbol datasets allow the display of various symbols on the branches of the tree. For each node, one or more symbols can be defined.
+#Each symbol's color, size and position along the branch can be specified.
+
+#lines starting with a hash are comments and ignored during parsing
+#=================================================================#
+#                    MANDATORY SETTINGS                           #
+#=================================================================#
+#select the separator which is used to delimit the data below (TAB,SPACE or COMMA).This separator must be used throughout this file (except in the SEPARATOR line, which uses space).
+SEPARATOR TAB
+#SEPARATOR SPACE
+#SEPARATOR COMMA
+
+#label is used in the legend table (can be changed later)
+DATASET_LABEL	MIMAG quality
+
+#dataset color (can be changed later)
+COLOR	#ff3300
+
+#=================================================================#
+#                    OPTIONAL SETTINGS                            #
+#=================================================================#
+
+
+#=================================================================#
+#     all other optional settings can be set or changed later     #
+#           in the web interface (under 'Datasets' tab)           #
+#=================================================================#
+
+#Each dataset can have a legend, which is defined using LEGEND_XXX fields below
+#For each row in the legend, there should be one shape, color and label.
+#Optionally, you can define an exact legend position using LEGEND_POSITION_X and LEGEND_POSITION_Y. To use automatic legend positioning, do NOT define these values
+#Optionally, shape scaling can be present (LEGEND_SHAPE_SCALES). For each shape, you can define a scaling factor between 0 and 1.
+#Shape should be a number between 1 and 6, or any protein domain shape definition.
+#1: square
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#LEGEND_TITLE,Dataset legend
+#LEGEND_POSITION_X,100
+#LEGEND_POSITION_Y,100
+#LEGEND_SHAPES,1,2,3
+#LEGEND_COLORS,#ff0000,#00ff00,#0000ff
+#LEGEND_LABELS,value1,value2,value3
+#LEGEND_SHAPE_SCALES,1,1,0.5
+
+
+#largest symbol will be displayed with this size, others will be proportionally smaller.
+MAXIMUM_SIZE	6
+
+
+#Internal tree nodes can be specified using IDs directly, or using the 'last common ancestor' method described in iTOL help pages
+#=================================================================#
+#       Actual data follows after the "DATA" keyword              #
+#=================================================================#
+#the following fields are required for each node:
+#ID,symbol,size,color,fill,position,label
+#symbol should be a number between 1 and 5:
+#1: rectangle
+#2: circle
+#3: star
+#4: right pointing triangle
+#5: left pointing triangle
+#6: checkmark
+
+#size can be any number. Maximum size in the dataset will be displayed using MAXIMUM_SIZE, while others will be proportionally smaller
+#color can be in hexadecimal, RGB or RGBA notation. If RGB or RGBA are used, dataset SEPARATOR cannot be comma.
+#fill can be 1 or 0. If set to 0, only the outline of the symbol will be displayed.
+#position is a number between 0 and 1 and defines the position of the symbol on the branch (for example, position 0 is exactly at the start of node branch, position 0.5 is in the middle, and position 1 is at the end)
+
+DATA
+#Examples
+
+#internal node will have a red filled circle in the middle of the branch
+#9606|184922,2,10,#ff0000,1,0.5
+
+#node 100379 will have a blue star outline at the start of the branch, half the size of the circle defined above (size is 5 compared to 10 above)
+#100379,3,5,#0000ff,0,0
+#node 100379 will also have a filled green rectangle in the middle of the branch, same size as the circle defined above (size is 10)
+#100379,1,10,#00ff00,1,0.5
+
+MAG-1	2	1	#ff0066	0	1.05
+MAG-2	2	1	#ff0066	1	1.05
+MAG-3	2	1	#ff0066	0	1.05
+MAG-4	2	1	#ff0066	0	1.05
+MAG-5	2	1	#ff0066	0	1.05
+MAG-6	2	1	#ff0066	0	1.05
+MAG-7	2	1	#ff0066	0	1.05
+MAG-8	2	1	#ff0066	0	1.05
+MAG-9	2	1	#ff0066	1	1.05
+MAG-10	2	1	#ff0066	0	1.05
+MAG-11	2	1	#ff0066	1	1.05
+MAG-12	2	1	#ff0066	1	1.05
+MAG-13	2	1	#ff0066	1	1.05
+MAG-14	2	1	#ff0066	1	1.05
+MAG-15	2	1	#ff0066	0	1.05
+MAG-16	2	1	#ff0066	0	1.05
+MAG-17	2	1	#ff0066	1	1.05
+MAG-18	2	1	#ff0066	0	1.05
+MAG-19	2	1	#7d26cd	0	1.05
+MAG-20	2	1	#7d26cd	0	1.05
+MAG-21	2	1	#7d26cd	0	1.05
+MAG-22	2	1	#7d26cd	0	1.05
+MAG-23	2	1	#7d26cd	0	1.05
+MAG-24	2	1	#7d26cd	0	1.05
+MAG-25	2	1	#7d26cd	0	1.05
+MAG-26	2	1	#7d26cd	0	1.05
+MAG-27	2	1	#7d26cd	0	1.05
+MAG-28	2	1	#7d26cd	1	1.05
+MAG-29	2	1	#7d26cd	0	1.05
+MAG-30	2	1	#7d26cd	0	1.05
+MAG-31	2	1	#7d26cd	1	1.05
+MAG-32	2	1	#7d26cd	0	1.05
+MAG-33	2	1	#7d26cd	1	1.05
+MAG-34	2	1	#7d26cd	0	1.05
+MAG-35	2	1	#7d26cd	0	1.05
+MAG-36	2	1	#7d26cd	0	1.05
+MAG-37	2	1	#7d26cd	0	1.05
+MAG-38	2	1	#7d26cd	1	1.05
+MAG-39	2	1	#7d26cd	1	1.05
+MAG-40	2	1	#7d26cd	1	1.05
+MAG-41	2	1	#7d26cd	0	1.05
+MAG-42	2	1	#7d26cd	0	1.05
+MAG-43	2	1	#7d26cd	0	1.05
+MAG-44	2	1	#7d26cd	1	1.05
+MAG-45	2	1	#7d26cd	1	1.05
+MAG-46	2	1	#7d26cd	0	1.05
+MAG-47	2	1	#7d26cd	1	1.05
+MAG-48	2	1	#7d26cd	1	1.05
+MAG-49	2	1	#7d26cd	0	1.05
+MAG-50	2	1	#7d26cd	1	1.05
+MAG-51	2	1	#7d26cd	1	1.05
+MAG-52	2	1	#7d26cd	0	1.05
+MAG-53	2	1	#7d26cd	1	1.05
+MAG-54	2	1	#7d26cd	0	1.05
+MAG-55	2	1	#7d26cd	0	1.05
+MAG-56	2	1	#7d26cd	0	1.05
+MAG-57	2	1	#7d26cd	0	1.05
+MAG-58	2	1	#7d26cd	0	1.05
+MAG-59	2	1	#7d26cd	1	1.05
+MAG-60	2	1	#7d26cd	0	1.05
+MAG-61	2	1	#7d26cd	1	1.05
+MAG-62	2	1	#000000	0	1.05
+MAG-63	2	1	#000000	0	1.05
+MAG-64	2	1	#008b00	0	1.05
+MAG-65	2	1	#008b00	1	1.05
+MAG-66	2	1	#008b00	0	1.05
+MAG-67	2	1	#008b00	0	1.05
+MAG-68	2	1	#008b00	0	1.05
+MAG-69	2	1	rgb(141,211,199)	1	1.05
+MAG-70	2	1	rgb(141,211,199)	1	1.05
+MAG-71	2	1	rgb(141,211,199)	1	1.05
+MAG-72	2	1	rgb(253,180,93)	0	1.05
+MAG-73	2	1	rgb(253,180,93)	1	1.05
+MAG-74	2	1	rgb(253,180,93)	0	1.05
+MAG-75	2	1	rgb(253,180,93)	0	1.05
+MAG-76	2	1	rgb(253,180,93)	0	1.05
+MAG-77	2	1	rgb(253,180,93)	0	1.05
+MAG-78	2	1	rgb(253,180,93)	0	1.05
+MAG-79	2	1	rgb(253,180,93)	0	1.05
+MAG-80	2	1	rgb(253,180,93)	0	1.05
+MAG-81	2	1	rgb(253,180,93)	0	1.05
+MAG-82	2	1	rgb(253,180,93)	0	1.05
+MAG-83	2	1	rgb(253,180,93)	0	1.05
+MAG-84	2	1	rgb(253,180,93)	0	1.05
+MAG-85	2	1	rgb(253,180,93)	0	1.05
+MAG-86	2	1	rgb(253,180,93)	0	1.05
+MAG-87	2	1	rgb(253,180,93)	0	1.05
+MAG-88	2	1	rgb(253,180,93)	0	1.05
+MAG-89	2	1	rgb(253,180,93)	0	1.05
+MAG-90	2	1	rgb(253,180,93)	1	1.05
+MAG-91	2	1	rgb(253,180,93)	0	1.05
+MAG-92	2	1	rgb(253,180,93)	0	1.05
+MAG-93	2	1	rgb(253,180,93)	0	1.05
+MAG-94	2	1	rgb(255,255,179)	0	1.05
+MAG-95	2	1	rgb(255,255,179)	0	1.05
+MAG-96	2	1	rgb(255,255,179)	0	1.05
+MAG-97	2	1	rgb(255,255,179)	0	1.05
+MAG-98	2	1	rgb(255,255,179)	1	1.05
+MAG-99	2	1	rgb(255,255,179)	0	1.05
+MAG-100	2	1	rgb(255,255,179)	0	1.05
+MAG-101	2	1	rgb(255,255,179)	0	1.05
+MAG-102	2	1	rgb(255,255,179)	1	1.05
+MAG-103	2	1	rgb(255,255,179)	0	1.05
+MAG-104	2	1	rgb(255,255,179)	0	1.05
+MAG-105	2	1	rgb(255,255,179)	0	1.05
+MAG-106	2	1	rgb(255,255,179)	0	1.05
+MAG-107	2	1	rgb(255,255,179)	0	1.05
+MAG-108	2	1	rgb(255,255,179)	1	1.05
+MAG-109	2	1	rgb(255,255,179)	0	1.05
+MAG-110	2	1	rgb(255,255,179)	0	1.05
+MAG-111	2	1	rgb(255,255,179)	0	1.05
+MAG-112	2	1	rgb(255,255,179)	0	1.05
+MAG-113	2	1	rgb(255,255,179)	0	1.05
+MAG-114	2	1	rgb(255,255,179)	0	1.05
+MAG-115	2	1	rgb(255,255,179)	0	1.05
+MAG-116	2	1	rgb(255,255,179)	0	1.05
+MAG-117	2	1	rgb(255,255,179)	0	1.05
+MAG-118	2	1	rgb(255,255,179)	0	1.05
+MAG-119	2	1	rgb(255,255,179)	0	1.05
+MAG-120	2	1	rgb(255,255,179)	0	1.05
+MAG-121	2	1	rgb(255,255,179)	0	1.05
+MAG-122	2	1	rgb(255,255,179)	0	1.05
+MAG-123	2	1	rgb(255,255,179)	0	1.05
+MAG-124	2	1	rgb(255,255,179)	0	1.05
+MAG-125	2	1	rgb(255,255,179)	0	1.05
+MAG-126	2	1	rgb(255,255,179)	0	1.05
+MAG-127	2	1	rgb(255,255,179)	0	1.05
+MAG-128	2	1	rgb(255,255,179)	0	1.05
+MAG-129	2	1	rgb(255,255,179)	0	1.05
+MAG-130	2	1	rgb(255,255,179)	0	1.05
+MAG-131	2	1	rgb(255,255,179)	0	1.05
+MAG-132	2	1	rgb(255,255,179)	0	1.05
+MAG-133	2	1	rgb(255,255,179)	1	1.05
+MAG-134	2	1	rgb(255,255,179)	1	1.05
+MAG-135	2	1	rgb(255,255,179)	0	1.05
+MAG-136	2	1	rgb(255,255,179)	0	1.05
+MAG-137	2	1	rgb(255,255,179)	0	1.05
+MAG-138	2	1	rgb(255,255,179)	0	1.05
+MAG-139	2	1	rgb(255,255,179)	1	1.05
+MAG-140	2	1	rgb(255,255,179)	1	1.05
+MAG-141	2	1	rgb(255,255,179)	0	1.05
+MAG-142	2	1	rgb(255,255,179)	0	1.05
+MAG-143	2	1	rgb(255,255,179)	0	1.05
+MAG-144	2	1	rgb(255,255,179)	0	1.05
+MAG-145	2	1	rgb(255,255,179)	0	1.05
+MAG-146	2	1	rgb(255,255,179)	0	1.05
+MAG-147	2	1	rgb(255,255,179)	0	1.05
+MAG-148	2	1	rgb(255,255,179)	0	1.05
+MAG-149	2	1	rgb(255,255,179)	0	1.05
+MAG-150	2	1	rgb(255,255,179)	1	1.05
+MAG-151	2	1	rgb(255,255,179)	0	1.05
+MAG-152	2	1	rgb(255,255,179)	0	1.05
+MAG-153	2	1	rgb(255,255,179)	1	1.05
+MAG-154	2	1	rgb(255,255,179)	0	1.05
+MAG-155	2	1	rgb(255,255,179)	0	1.05
+MAG-156	2	1	rgb(190,186,218)	0	1.05
+MAG-157	2	1	rgb(190,186,218)	0	1.05
+MAG-158	2	1	rgb(190,186,218)	0	1.05
+MAG-159	2	1	rgb(190,186,218)	0	1.05
+MAG-160	2	1	rgb(190,186,218)	0	1.05
+MAG-161	2	1	rgb(190,186,218)	0	1.05
+MAG-162	2	1	rgb(190,186,218)	0	1.05
+MAG-163	2	1	rgb(190,186,218)	0	1.05
+MAG-164	2	1	rgb(190,186,218)	0	1.05
+MAG-165	2	1	rgb(190,186,218)	0	1.05
+MAG-166	2	1	rgb(190,186,218)	1	1.05
+MAG-167	2	1	rgb(190,186,218)	0	1.05
+MAG-168	2	1	rgb(190,186,218)	0	1.05
+MAG-169	2	1	rgb(190,186,218)	0	1.05
+MAG-170	2	1	rgb(190,186,218)	0	1.05
+MAG-171	2	1	rgb(190,186,218)	0	1.05
+MAG-172	2	1	rgb(190,186,218)	0	1.05
+MAG-173	2	1	rgb(190,186,218)	1	1.05
+MAG-174	2	1	rgb(190,186,218)	0	1.05
+MAG-175	2	1	rgb(190,186,218)	0	1.05
+MAG-176	2	1	rgb(190,186,218)	0	1.05
+MAG-177	2	1	rgb(190,186,218)	0	1.05
+MAG-178	2	1	rgb(190,186,218)	0	1.05
+MAG-179	2	1	rgb(190,186,218)	0	1.05
+MAG-180	2	1	rgb(190,186,218)	0	1.05
+MAG-181	2	1	rgb(190,186,218)	0	1.05
+MAG-182	2	1	rgb(190,186,218)	0	1.05
+MAG-183	2	1	rgb(190,186,218)	0	1.05
+MAG-184	2	1	rgb(190,186,218)	0	1.05
+MAG-185	2	1	rgb(190,186,218)	0	1.05
+MAG-186	2	1	rgb(190,186,218)	0	1.05
+MAG-187	2	1	rgb(190,186,218)	0	1.05
+MAG-188	2	1	rgb(190,186,218)	0	1.05
+MAG-189	2	1	rgb(190,186,218)	0	1.05
+MAG-190	2	1	rgb(190,186,218)	0	1.05
+MAG-191	2	1	rgb(190,186,218)	0	1.05
+MAG-192	2	1	rgb(190,186,218)	0	1.05
+MAG-193	2	1	rgb(190,186,218)	0	1.05
+MAG-194	2	1	rgb(190,186,218)	0	1.05
+MAG-195	2	1	rgb(190,186,218)	0	1.05
+MAG-196	2	1	rgb(190,186,218)	0	1.05
+MAG-197	2	1	rgb(190,186,218)	0	1.05
+MAG-198	2	1	rgb(190,186,218)	0	1.05
+MAG-199	2	1	rgb(190,186,218)	0	1.05
+MAG-200	2	1	rgb(190,186,218)	0	1.05
+MAG-201	2	1	rgb(190,186,218)	0	1.05
+MAG-202	2	1	rgb(190,186,218)	0	1.05
+MAG-203	2	1	rgb(190,186,218)	0	1.05
+MAG-204	2	1	rgb(190,186,218)	0	1.05
+MAG-205	2	1	rgb(190,186,218)	0	1.05
+MAG-206	2	1	rgb(190,186,218)	0	1.05
+MAG-207	2	1	rgb(190,186,218)	0	1.05
+MAG-208	2	1	rgb(190,186,218)	0	1.05
+MAG-209	2	1	rgb(190,186,218)	0	1.05
+MAG-210	2	1	rgb(190,186,218)	0	1.05
+MAG-211	2	1	rgb(190,186,218)	0	1.05
+MAG-212	2	1	rgb(190,186,218)	0	1.05
+MAG-213	2	1	rgb(190,186,218)	0	1.05
+MAG-214	2	1	rgb(190,186,218)	0	1.05
+MAG-215	2	1	rgb(190,186,218)	0	1.05
+MAG-216	2	1	rgb(190,186,218)	0	1.05
+MAG-217	2	1	rgb(190,186,218)	0	1.05
+MAG-218	2	1	rgb(190,186,218)	0	1.05
+MAG-219	2	1	rgb(190,186,218)	0	1.05
+MAG-220	2	1	rgb(190,186,218)	0	1.05
+MAG-221	2	1	rgb(190,186,218)	0	1.05
+MAG-222	2	1	rgb(190,186,218)	0	1.05
+MAG-223	2	1	rgb(190,186,218)	0	1.05
+MAG-224	2	1	rgb(190,186,218)	0	1.05
+MAG-225	2	1	rgb(252,205,229)	0	1.05
+MAG-226	2	1	rgb(252,205,229)	0	1.05
+MAG-227	2	1	rgb(252,205,229)	0	1.05
+MAG-228	2	1	rgb(252,205,229)	0	1.05
+MAG-229	2	1	rgb(252,205,229)	0	1.05
+MAG-230	2	1	rgb(252,205,229)	0	1.05
+MAG-231	2	1	rgb(252,205,229)	0	1.05
+MAG-232	2	1	rgb(252,205,229)	0	1.05
+MAG-233	2	1	rgb(252,205,229)	0	1.05
+MAG-234	2	1	rgb(252,205,229)	0	1.05
+MAG-235	2	1	rgb(252,205,229)	0	1.05
+MAG-236	2	1	rgb(252,205,229)	0	1.05
+MAG-237	2	1	rgb(252,205,229)	0	1.05
+MAG-238	2	1	rgb(252,205,229)	0	1.05
+MAG-239	2	1	rgb(252,205,229)	0	1.05
+MAG-240	2	1	rgb(252,205,229)	0	1.05
+MAG-241	2	1	#cc00ff	0	1.05
+MAG-242	2	1	#cc00ff	0	1.05
+MAG-243	2	1	#cc00ff	0	1.05
+MAG-244	2	1	#cc00ff	0	1.05
+MAG-245	2	1	#cc00ff	0	1.05
+MAG-246	2	1	#cc00ff	0	1.05
+MAG-247	2	1	#cc00ff	1	1.05
+MAG-248	2	1	#cc00ff	1	1.05
+MAG-249	2	1	#cc00ff	1	1.05
+MAG-250	2	1	#cc00ff	0	1.05
+MAG-251	2	1	#cc00ff	0	1.05
+MAG-252	2	1	#cc00ff	0	1.05
+MAG-253	2	1	#cc00ff	1	1.05
+MAG-254	2	1	#cc00ff	0	1.05
+MAG-255	2	1	#cc00ff	0	1.05
+MAG-256	2	1	#cc00ff	0	1.05
+MAG-257	2	1	#cc00ff	0	1.05
+MAG-258	2	1	#000000	0	1.05
+MAG-259	2	1	#000000	0	1.05
+MAG-260	2	1	#000000	0	1.05
+MAG-261	2	1	#666600	0	1.05
+MAG-262	2	1	#666600	0	1.05
+MAG-263	2	1	#666600	0	1.05
+MAG-264	2	1	#666600	0	1.05
+MAG-265	2	1	#666600	0	1.05
+MAG-266	2	1	#666600	0	1.05
+MAG-267	2	1	#666600	0	1.05
+MAG-268	2	1	#666600	0	1.05
+MAG-269	2	1	#666600	0	1.05
+MAG-270	2	1	#666600	0	1.05
+MAG-271	2	1	#666600	0	1.05
+MAG-272	2	1	#666600	0	1.05
+MAG-273	2	1	#666600	0	1.05
+MAG-274	2	1	#666600	1	1.05
+MAG-275	2	1	#666600	1	1.05
+MAG-276	2	1	#666600	0	1.05
+MAG-277	2	1	#666600	0	1.05
+MAG-278	2	1	#cc0066	1	1.05
+MAG-279	2	1	#cc0066	0	1.05
+MAG-280	2	1	#cc0066	1	1.05
+MAG-281	2	1	#cc0066	1	1.05
+MAG-282	2	1	#cc0066	1	1.05
+MAG-283	2	1	#cc0066	0	1.05
+MAG-284	2	1	#000000	0	1.05
+MAG-285	2	1	rgb(217,217,217)	0	1.05
+MAG-286	2	1	rgb(217,217,217)	0	1.05
+MAG-287	2	1	rgb(217,217,217)	0	1.05
+MAG-288	2	1	rgb(217,217,217)	0	1.05
+MAG-289	2	1	rgb(217,217,217)	0	1.05
+MAG-290	2	1	#000000	1	1.05
+MAG-291	2	1	#000000	0	1.05
+MAG-292	2	1	#000000	1	1.05
+MAG-293	2	1	#000000	0	1.05
+MAG-294	2	1	#000000	0	1.05
+MAG-295	2	1	#000000	0	1.05
+MAG-296	2	1	#000000	0	1.05
+MAG-297	2	1	#000000	0	1.05
+MAG-298	2	1	#000000	0	1.05
+MAG-299	2	1	#000000	0	1.05
+MAG-300	2	1	#000000	0	1.05
+MAG-301	2	1	#000000	0	1.05
+MAG-302	2	1	#000000	0	1.05
+MAG-303	2	1	#000000	0	1.05
+MAG-304	2	1	#000000	0	1.05
+MAG-305	2	1	#000000	0	1.05
+MAG-306	2	1	#000000	1	1.05
+MAG-307	2	1	rgb(128,177,211)	1	1.05
+MAG-308	2	1	rgb(128,177,211)	0	1.05
+MAG-309	2	1	rgb(128,177,211)	0	1.05
+MAG-310	2	1	rgb(128,177,211)	0	1.05
+MAG-311	2	1	rgb(128,177,211)	0	1.05
+MAG-312	2	1	rgb(128,177,211)	0	1.05
+MAG-313	2	1	rgb(128,177,211)	0	1.05
+MAG-314	2	1	rgb(128,177,211)	0	1.05
+MAG-315	2	1	rgb(128,177,211)	1	1.05
+MAG-316	2	1	rgb(128,177,211)	1	1.05
+MAG-317	2	1	rgb(128,177,211)	1	1.05
+MAG-318	2	1	rgb(128,177,211)	0	1.05
+MAG-319	2	1	rgb(128,177,211)	0	1.05
+MAG-320	2	1	rgb(128,177,211)	0	1.05
+MAG-321	2	1	rgb(128,177,211)	1	1.05
+MAG-322	2	1	rgb(128,177,211)	1	1.05
+MAG-323	2	1	rgb(128,177,211)	0	1.05
+MAG-324	2	1	rgb(128,177,211)	1	1.05
+MAG-325	2	1	rgb(128,177,211)	1	1.05
+MAG-326	2	1	rgb(128,177,211)	1	1.05
+MAG-327	2	1	rgb(128,177,211)	1	1.05
+MAG-328	2	1	rgb(128,177,211)	0	1.05
+MAG-329	2	1	rgb(128,177,211)	0	1.05
+MAG-330	2	1	rgb(128,177,211)	0	1.05
+MAG-331	2	1	rgb(128,177,211)	0	1.05
+MAG-332	2	1	rgb(128,177,211)	0	1.05
+MAG-333	2	1	rgb(128,177,211)	0	1.05
+MAG-334	2	1	rgb(128,177,211)	0	1.05
+MAG-335	2	1	rgb(128,177,211)	0	1.05
+MAG-336	2	1	rgb(128,177,211)	0	1.05
+MAG-337	2	1	rgb(128,177,211)	0	1.05
+MAG-338	2	1	rgb(128,177,211)	0	1.05
+MAG-339	2	1	rgb(128,177,211)	0	1.05
+MAG-340	2	1	rgb(128,177,211)	1	1.05
+MAG-341	2	1	rgb(128,177,211)	0	1.05
+MAG-342	2	1	rgb(128,177,211)	0	1.05
+MAG-343	2	1	rgb(128,177,211)	0	1.05
+MAG-344	2	1	rgb(128,177,211)	0	1.05
+MAG-345	2	1	rgb(128,177,211)	0	1.05
+MAG-346	2	1	rgb(128,177,211)	0	1.05
+MAG-347	2	1	rgb(128,177,211)	0	1.05
+MAG-348	2	1	rgb(128,177,211)	0	1.05
+MAG-349	2	1	rgb(128,177,211)	0	1.05
+MAG-350	2	1	rgb(128,177,211)	0	1.05
+MAG-351	2	1	rgb(128,177,211)	1	1.05
+MAG-352	2	1	rgb(128,177,211)	0	1.05
+MAG-353	2	1	rgb(128,177,211)	0	1.05
+MAG-354	2	1	rgb(128,177,211)	1	1.05
+MAG-355	2	1	rgb(128,177,211)	0	1.05
+MAG-356	2	1	rgb(128,177,211)	1	1.05
+MAG-357	2	1	rgb(128,177,211)	1	1.05
+MAG-358	2	1	rgb(128,177,211)	1	1.05
+MAG-359	2	1	rgb(128,177,211)	0	1.05
+MAG-360	2	1	rgb(128,177,211)	1	1.05
+MAG-361	2	1	rgb(128,177,211)	0	1.05
+MAG-362	2	1	rgb(128,177,211)	0	1.05
+MAG-363	2	1	rgb(128,177,211)	0	1.05
+MAG-364	2	1	rgb(128,177,211)	0	1.05
+MAG-365	2	1	rgb(128,177,211)	0	1.05
+MAG-366	2	1	rgb(128,177,211)	0	1.05
+MAG-367	2	1	rgb(128,177,211)	0	1.05
+MAG-368	2	1	rgb(128,177,211)	1	1.05
+MAG-369	2	1	rgb(128,177,211)	1	1.05
+MAG-370	2	1	rgb(128,177,211)	1	1.05
+MAG-371	2	1	rgb(128,177,211)	0	1.05
+MAG-372	2	1	rgb(128,177,211)	1	1.05
+MAG-373	2	1	rgb(128,177,211)	0	1.05
+MAG-374	2	1	rgb(128,177,211)	0	1.05
+MAG-375	2	1	rgb(128,177,211)	0	1.05
+MAG-376	2	1	rgb(128,177,211)	0	1.05
+MAG-377	2	1	rgb(128,177,211)	0	1.05
+MAG-378	2	1	rgb(128,177,211)	0	1.05
+MAG-379	2	1	rgb(128,177,211)	1	1.05
+MAG-380	2	1	rgb(128,177,211)	0	1.05
+MAG-381	2	1	rgb(128,177,211)	1	1.05
+MAG-382	2	1	rgb(128,177,211)	0	1.05
+MAG-383	2	1	rgb(128,177,211)	0	1.05
+MAG-384	2	1	rgb(128,177,211)	0	1.05
+MAG-385	2	1	rgb(128,177,211)	0	1.05
+MAG-386	2	1	rgb(128,177,211)	1	1.05
+MAG-387	2	1	rgb(128,177,211)	0	1.05
+MAG-388	2	1	rgb(128,177,211)	1	1.05
+MAG-389	2	1	rgb(128,177,211)	1	1.05
+MAG-390	2	1	rgb(128,177,211)	0	1.05
+MAG-391	2	1	rgb(128,177,211)	0	1.05
+MAG-392	2	1	rgb(128,177,211)	0	1.05
+MAG-393	2	1	rgb(128,177,211)	0	1.05
+MAG-394	2	1	rgb(128,177,211)	0	1.05
+MAG-395	2	1	#000000	0	1.05
+MAG-396	2	1	#000000	1	1.05
+MAG-397	2	1	#ff0000	0	1.05
+MAG-398	2	1	#ff0000	0	1.05
+MAG-399	2	1	#ff0000	0	1.05
+MAG-400	2	1	#ff0000	1	1.05
+MAG-401	2	1	#ff0000	0	1.05
+MAG-402	2	1	#ff0000	1	1.05
+MAG-403	2	1	#ff0000	1	1.05

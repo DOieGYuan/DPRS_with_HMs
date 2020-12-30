@@ -7,7 +7,7 @@ test -e bz2/ || mkdir bz2
 nuc_num=`egrep -v ">" $1 | wc -c`
 sample_num=`ls *_1.fq.gz | wc -l`
 if (($nuc_num >= 4000000000)); then
-	bowtie2-build $1 bz2/asm --threads $2 --large-index 
+	bowtie2-build $1 bz2/asm --threads $2 --large-index
 else
 	bowtie2-build $1 bz2/asm --threads $2
 fi
@@ -53,12 +53,10 @@ mkdir maxbin2_bins
 mv maxbin/maxbin.*.fasta maxbin2_bins
 # clean workplace
 rm *.sam
-rm *.bam*
 rm concoct_*
 rm contigs_10K*
 rm abundance.list
 rm A*.coverage.tab
-rm *.fai
 rm -rf bz2
 rm -rf maxbin
 mv concoct_output/concoct_bins .
@@ -66,12 +64,23 @@ rm -rf concoct_output
 conda activate metawrap
 # metaWrap
 echo "use metaWRAP to refine bins"
-metawrap bin_refinement -o metawrap -t $2 -m 120 -c 70 -x 10 -A maxbin2_bins -B metabat_binning -C concoct_bins
+metawrap bin_refinement -o metawrap -t $2 -m 120 -c 50 -x 10 -A maxbin2_bins -B metabat_binning -C concoct_bins
 mv metawrap/metawrap_*bins .
 rm -rf metawrap
 mv metawrap_*bins metawrap/
+# refineM
+source refineM.sh ${1%}.contigs.fa $2 $1
+rm *.bam
+rm *.fai
+# reassemble using metaWRAP
 zcat *_1.fq.gz > comb_1.fastq
 zcat *_2.fq.gz > comb_2.fastq
 # if need, change numbers behind -c and -x for controlling the MAGs' quality
-metawrap reassemble_bins -b metawrap -o reasm -1 comb_1.fastq -2 comb_2.fastq -c 70 -x 10 -t @2 -m 120 -l 500
-echo "binning workflow by DOieGYuan finished successfully"
+metawrap reassemble_bins -b refineM_bins -o reasm -1 comb_1.fastq -2 comb_2.fastq -c 50 -x 10 -t $2 -m 250 -l 500
+conda deactivate
+rm comb_?.fastq
+rm ${1%}.contigs.fa
+rm -rf reasm/work_files
+rm -rf reasm/reassembled_bins.checkm
+rm -rf reasm/original_bins
+echo "binning workflow finished successfully"
