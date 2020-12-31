@@ -127,7 +127,7 @@ conda deactivate
 cd -
 ```
 ### Assembly
-Copy [Assembly.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/Assembly.sh) to reads directory and run `./Assembly.sh` (you may need run `chmod 775 Assembly.sh` first) or
+Copy [Assembly.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/Assembly.sh) to reads directory and run `./Assembly.sh` (you may need run `chmod 775 Assembly.sh` first) or
 ```
 conda activate assembly
 mkdir assembly
@@ -145,7 +145,7 @@ cd -
 ```
 Now we obtain **[Coasm.contigs.fa](https://ndownloader.figshare.com/files/25915446)**.
 ### Binning
-Use our packaged [binning_wf.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.sh)
+Use our packaged [binning_wf.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/binning_wf.sh)
 ```
 conda activate binning
 mkdir binning
@@ -156,7 +156,7 @@ chmod 775 binning_wf
 ./binning_wf.sh Coasm.fa [threads] # in our case, 64
 conda deactivate
 ```
-Details for binning see [here](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/binning_wf.md)  
+Details for binning see [here](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/binning_wf.md)  
 Now we get **MIMAG High- or medium-quality metagenomic-assembled genomes (MAGs)**.  
 Or, skip this time-consuming step by downloading MAGs (entitled "new MAG-xxx") from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB8814347).
 ### Taonomic classification
@@ -170,7 +170,7 @@ gtdbtk classify_wf --genome_dir genomes --out_dir GTDBtk_tax --cpus 64
 conda deactivate
 ```
 Now we have the GTDB taxonomic information for each MAG.  
-Convert it into NCBI taxonomy [using gtdb_vs_ncbi_r95_bacteria.xlsx](https://data.ace.uq.edu.au/public/gtdb/data/releases/release95/95.0/auxillary_files/gtdb_vs_ncbi_r95_bacteria.xlsx) using [Convert_GTDB2NCBI.R](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Rscripts/Convert_GTDB2NCBI.R). **Manual verification is needed**
+Convert it into NCBI taxonomy [using gtdb_vs_ncbi_r95_bacteria.xlsx](https://data.ace.uq.edu.au/public/gtdb/data/releases/release95/95.0/auxillary_files/gtdb_vs_ncbi_r95_bacteria.xlsx) using [Convert_GTDB2NCBI.R](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/Convert_GTDB2NCBI.R). **Manual verification is needed**
 ### Determine the quality of MAGs
 Estimate the completeness and contamination
 ```
@@ -178,7 +178,7 @@ conda activate binning
 cd [directory with MAGs]
 checkm lineage_wf -t 12 -x fa ./ ./checkm_qa > bin_quality.log
 ```
-Estimate the presence of tRNAs and rRNAs using [How_many_tRNA.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/How_many_tRNA.sh) and [Who_has_rRNA.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/Who_has_rRNA.sh), or manually,
+Estimate the presence of tRNAs and rRNAs using [How_many_tRNA.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/How_many_tRNA.sh) and [Who_has_rRNA.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/Who_has_rRNA.sh), or manually,
 ```
 # scan rRNA
 conda activate binning
@@ -219,7 +219,7 @@ do kraken2 --db NCBI_db/ --paired $f ${f%_1.fq.gz}_2.fq.gz \
   --threads 64 --report ${f%_1.fq.gz}.txt --use-mpa-style
 done
 ```
-**(Supplementary information Fig.S1)** ribosomal protein gene-based classification by [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get ribosmal protein gene(e.g., *rplB*)-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
+**(Supplementary information Fig.S1)** ribosomal protein gene-based classification by [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/SingleM.sh), we can get ribosmal protein gene(e.g., *rplB*)-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
 
 
 ### Predict functional genes
