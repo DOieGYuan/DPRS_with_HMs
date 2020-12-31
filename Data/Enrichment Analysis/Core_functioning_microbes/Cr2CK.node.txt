@@ -1,0 +1,62 @@
+name	ontology	NES	pvalue	fdr_qvalue	fwer_qvalue	size	annotation	colour	type
+COG3391	COG3391	1.4775	0.0241	0.2144	0.9994	17	amine dehydrogenase activity	overexpressed	Ontology
+2VM27	2VM27	-1.8393	9.00E-04	0.2404	0.2702	31	Belongs to the ompA family	downexpressed	Ontology
+GO:0002161	GO:0002161	1.5045	0.0135	0.2046	0.9929	23	aminoacyl-tRNA editing activity	overexpressed	Ontology
+GO:0000413	GO:0000413	1.5008	0.0137	0.1882	0.9943	17	protein peptidyl-prolyl isomerization	overexpressed	Ontology
+GO:0000166	GO:0000166	1.4701	0.0018	0.2217	0.9999	124	nucleotide binding	overexpressed	Ontology
+COG1653	COG1653	1.5333	0.0051	0.2186	0.9565	37	carbohydrate transport	overexpressed	Ontology
+K02035	K02035	1.5389	0.0097	0.218	0.9422	22	ABC.PE.S; peptide/nickel transport system substrate-binding protein	overexpressed	Ontology
+K03640	K03640	1.4596	0.0249	0.2386	1	18	pal; peptidoglycan-associated lipoprotein	overexpressed	Ontology
+1MV0X	1MV0X	1.4844	0.0172	0.2097	0.9991	21	TonB-dependent siderophore receptor	overexpressed	Ontology
+1R9ZQ	1R9ZQ	1.5029	0.0153	0.1909	0.9933	17	PPIases accelerate the folding of proteins. It catalyzes the cis-trans isomerization of proline imidic peptide bonds in oligopeptides	overexpressed	Ontology
+GO:0015344	GO:0015344	1.549	0.005	0.2042	0.9135	31	siderophore uptake transmembrane transporter activity	overexpressed	Ontology
+COG2193	COG2193	1.5166	0.0114	0.2127	0.9841	21	ferroxidase activity	overexpressed	Ontology
+GO:0019829	GO:0019829	1.5276	0.0089	0.2047	0.9683	26	cation-transporting ATPase activity	overexpressed	Ontology
+K17321	K17321	1.5229	0.0116	0.206	0.9768	15	glpV; glycerol transport system substrate-binding protein	overexpressed	Ontology
+1RD4A	1RD4A	1.5493	0.0058	0.2257	0.9121	18	Belongs to the universal ribosomal protein uS9 family	overexpressed	Ontology
+COG4774	COG4774	1.5283	0.0098	0.218	0.9667	26	siderophore transport	overexpressed	Ontology
+COG0747	COG0747	1.5099	0.0114	0.1984	0.9894	26	negative chemotaxis	overexpressed	Ontology
+GO:0000049	GO:0000049	1.4797	0.0215	0.2158	0.9994	18	tRNA binding	overexpressed	Ontology
+GO:0009228	GO:0009228	1.7168	1.00E-04	0.0685	0.0781	17	thiamine biosynthetic process	overexpressed	Ontology
+COG0652	COG0652	1.5042	0.015	0.1958	0.9929	17	peptidyl-prolyl cis-trans isomerase activity	overexpressed	Ontology
+K03594	K03594	1.4973	0.0157	0.1897	0.9954	20	bfr; bacterioferritin [EC:1.16.3.1]	overexpressed	Ontology
+1MV8A	1MV8A	1.5155	0.0143	0.2034	0.985	15	ABC-type sugar transport system periplasmic component	overexpressed	Ontology
+1MU08	1MU08	1.5131	0.0114	0.1993	0.9869	22	Heavy metal translocating P-type atpase	overexpressed	Ontology
+K01534	K01534	1.4894	0.0162	0.2036	0.998	22	zntA; Zn2+/Cd2+-exporting ATPase [EC:7.2.2.12 7.2.2.21]	overexpressed	Ontology
+2TQP8	2TQP8	1.47	0.0238	0.2147	0.9999	25	This protein promotes the GTP-dependent binding of aminoacyl-tRNA to the A-site of ribosomes during protein biosynthesis	overexpressed	Ontology
+GO:0016787	GO:0016787	1.4734	0.0192	0.2193	0.9995	29	hydrolase activity	overexpressed	Ontology
+MAG-118	MAG-118	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Altererythrobacter;s__	Others	MAG
+MAG-119	MAG-119	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-120	MAG-120	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-121	MAG-121	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-133	MAG-133	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__;g__Phreatobacter;s__	Phreatobacter	MAG
+MAG-134	MAG-134	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Rhizobiaceae;g__Mesorhizobium;s__	Mesorhizobium	MAG
+MAG-164	MAG-164	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Chitinimonas;s__	Others	MAG
+MAG-167	MAG-167	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Nitrosomonadaceae;g__Nitrosomonas;s__	Nitrosomonas	MAG
+MAG-175	MAG-175	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Sterolibacteriaceae;g__Methyloversatilis;s__	Methyloversatilis	MAG
+MAG-176	MAG-176	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Sterolibacteriaceae;g__Methyloversatilis;s__Methyloversatilis discipulorum	Methyloversatilis	MAG
+MAG-177	MAG-177	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Thauera;s__	Thauera	MAG
+MAG-178	MAG-178	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Thauera;s__	Thauera	MAG
+MAG-179	MAG-179	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-180	MAG-180	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-181	MAG-181	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Zoogloea;s__	Zoogloea	MAG
+MAG-182	MAG-182	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-183	MAG-183	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-191	MAG-191	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-192	MAG-192	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-193	MAG-193	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-199	MAG-199	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-200	MAG-200	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-201	MAG-201	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-202	MAG-202	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-203	MAG-203	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-209	MAG-209	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Comamonas;s__Delftia acidovorans	Comamonas	MAG
+MAG-210	MAG-210	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	Others	MAG
+MAG-212	MAG-212	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-221	MAG-221	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Others	MAG
+MAG-222	MAG-222	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Pelomonas;s__	Pelomonas	MAG
+MAG-230	MAG-230	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__Xanthomonadaceae;g__Pseudoxanthomonas;s__Pseudoxanthomonas mexicana	Others	MAG
+MAG-285	MAG-285	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-287	MAG-287	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-289	MAG-289	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-340	MAG-340	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Flavobacteriia;o__Flavobacteriales;f__Flavobacteriaceae;g__Flavobacterium;s__Flavobacterium lindanitolerans	Others	MAG

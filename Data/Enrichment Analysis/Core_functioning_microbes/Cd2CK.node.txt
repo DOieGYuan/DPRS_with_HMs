@@ -1,0 +1,273 @@
+name	ontology	NES	pvalue	fdr_qvalue	fwer_qvalue	size	annotation	colour	type
+1MUTQ	1MUTQ	1.4747	0.047	0.1852	1	16	Belongs to the IlvD Edd family	overexpressed	Ontology
+1MVW2	1MVW2	1.6331	0.0097	0.09	0.9089	15	Destroys radicals which are normally produced within the cells and which are toxic to biological systems	overexpressed	Ontology
+2VHM6	2VHM6	-1.756	0.0015	0.0405	0.5484	25	Belongs to the FAD-dependent oxidoreductase 2 family. FRD SDH subfamily	downexpressed	Ontology
+COG1629	COG1629	1.4031	0.0127	0.217	1	110	colicin transmembrane transporter activity	overexpressed	Ontology
+1MVW7	1MVW7	1.5972	0.016	0.1004	0.9707	17	serine protein kinase	overexpressed	Ontology
+COG0811	COG0811	1.4078	0.0476	0.2169	1	17	peptide transport	overexpressed	Ontology
+GO:0004784	GO:0004784	1.8837	3.00E-04	0.052	0.0501	23	superoxide dismutase activity	overexpressed	Ontology
+1MV5T	1MV5T	1.499	0.0409	0.1647	0.9997	15	"COG0683 ABC-type branched-chain amino acid transport systems, periplasmic component"	overexpressed	Ontology
+1MUKX	1MUKX	-1.5701	0.0068	0.1158	0.9807	40	Belongs to the citrate synthase family	downexpressed	Ontology
+COG0542	COG0542	1.5811	0.0101	0.1018	0.9857	29	response to heat	overexpressed	Ontology
+K02012	K02012	1.7835	9.00E-04	0.0764	0.2604	18	"afuA, fbpA; iron(III) transport system substrate-binding protein"	overexpressed	Ontology
+GO:0005509	GO:0005509	-1.7845	0	0.0316	0.4455	71	calcium ion binding	downexpressed	Ontology
+1MUCV	1MUCV	1.5675	0.0101	0.109	0.9932	32	"Catalyzes the GTP-dependent ribosomal translocation step during translation elongation. During this step, the ribosome changes from the pre-translocational (PRE) to the post- translocational (POST) state as the newly formed A-site-bound peptidyl-tRNA and P-site-bound deacylated tRNA move to the P and E sites, respectively. Catalyzes the coordinated movement of the two tRNA molecules, the mRNA and conformational changes in the ribosome"	overexpressed	Ontology
+K02933	K02933	1.3597	0.0965	0.2488	1	18	"RP-L6, MRPL6, rplF; large subunit ribosomal protein L6"	overexpressed	Ontology
+K00239	K00239	-1.8738	2.00E-04	0.021	0.178	29	"sdhA, frdA; succinate dehydrogenase / fumarate reductase, flavoprotein subunit [EC:1.3.5.1 1.3.5.4]"	downexpressed	Ontology
+K01689	K01689	-1.3799	0.0667	0.226	1	27	"ENO, eno; enolase [EC:4.2.1.11]"	downexpressed	Ontology
+K00114	K00114	-1.7036	0.0061	0.0563	0.7351	20	exaA; alcohol dehydrogenase (cytochrome c) [EC:1.1.2.8]	downexpressed	Ontology
+K01687	K01687	1.4402	0.0537	0.2004	1	17	ilvD; dihydroxy-acid dehydratase [EC:4.2.1.9]	overexpressed	Ontology
+GO:0031071	GO:0031071	1.7812	0.0012	0.0529	0.2691	28	cysteine desulfurase activity	overexpressed	Ontology
+K15864	K15864	-1.909	5.00E-04	0.0196	0.1143	36	nirS; nitrite reductase (NO-forming) / hydroxylamine reductase [EC:1.7.2.1 1.7.99.1]	downexpressed	Ontology
+1RB94	1RB94	-1.5256	0.0333	0.1301	0.9963	16	COG3203 Outer membrane protein (porin)	downexpressed	Ontology
+GO:0015562	GO:0015562	1.3562	0.031	0.2499	1	74	efflux transmembrane transporter activity	overexpressed	Ontology
+GO:0016639	GO:0016639	1.4626	0.0396	0.1916	1	22	"oxidoreductase activity, acting on the CH-NH2 group of donors, NAD or NADP as acceptor"	overexpressed	Ontology
+GO:0009325	GO:0009325	-1.9413	0	0.0183	0.0726	32	nitrate reductase complex	downexpressed	Ontology
+COG4993	COG4993	-1.8236	8.00E-04	0.0278	0.311	33	Dehydrogenase	downexpressed	Ontology
+GO:0042026	GO:0042026	1.5625	0.0018	0.1098	0.9948	104	protein refolding	overexpressed	Ontology
+GO:0006457	GO:0006457	1.4723	0.0011	0.1858	1	180	protein folding	overexpressed	Ontology
+1MUEG	1MUEG	1.8454	5.00E-04	0.0348	0.0983	17	"ABC-type Fe3 transport system, periplasmic component"	overexpressed	Ontology
+COG0148	COG0148	-1.3842	0.0456	0.2272	1	28	phosphopyruvate hydratase activity	downexpressed	Ontology
+COG2326	COG2326	-1.5618	0.0297	0.1165	0.9854	15	polyphosphate kinase activity	downexpressed	Ontology
+GO:0044571	GO:0044571	1.7784	0.0012	0.0416	0.2797	28	[2Fe-2S] cluster assembly	overexpressed	Ontology
+2VIW1	2VIW1	1.4757	0.022	0.1899	1	40	Prevents misfolding and promotes the refolding and proper assembly of unfolded polypeptides generated under stress conditions	overexpressed	Ontology
+2VQ4W	2VQ4W	1.3925	0.0785	0.2172	1	16	"This protein binds to the 23S rRNA, and is important in its secondary structure. It is located near the subunit interface in the base of the L7 L12 stalk, and near the tRNA binding site of the peptidyltransferase center"	overexpressed	Ontology
+GO:0051539	GO:0051539	-1.8121	0	0.0298	0.3507	86	"4 iron, 4 sulfur cluster binding"	downexpressed	Ontology
+K02886	K02886	1.3986	0.0647	0.2215	1	24	"RP-L2, MRPL2, rplB; large subunit ribosomal protein L2"	overexpressed	Ontology
+GO:0016625	GO:0016625	-1.8709	0.0021	0.0197	0.1847	17	"oxidoreductase activity, acting on the aldehyde or oxo group of donors, iron-sulfur protein as acceptor"	downexpressed	Ontology
+GO:0016627	GO:0016627	-1.4522	0.0135	0.178	0.9999	60	"oxidoreductase activity, acting on the CH-CH group of donors"	downexpressed	Ontology
+GO:0022900	GO:0022900	-1.5815	0.0036	0.1128	0.9742	62	electron transport chain	downexpressed	Ontology
+2VI3Q	2VI3Q	1.3842	0.0651	0.2255	1	22	"Catalyzes the GTP-dependent ribosomal translocation step during translation elongation. During this step, the ribosome changes from the pre-translocational (PRE) to the post- translocational (POST) state as the newly formed A-site-bound peptidyl-tRNA and P-site-bound deacylated tRNA move to the P and E sites, respectively. Catalyzes the coordinated movement of the two tRNA molecules, the mRNA and conformational changes in the ribosome"	overexpressed	Ontology
+GO:0046912	GO:0046912	-1.4926	0.012	0.1437	0.9989	53	"transferase activity, transferring acyl groups, acyl groups converted into alkyl on transfer"	downexpressed	Ontology
+1MURR	1MURR	1.5407	0.0024	0.1249	0.9988	74	Prevents misfolding and promotes the refolding and proper assembly of unfolded polypeptides generated under stress conditions	overexpressed	Ontology
+K16090	K16090	1.6478	0.0084	0.0848	0.8652	19	fiu; catecholate siderophore receptor	overexpressed	Ontology
+COG0840	COG0840	-1.4218	0.0303	0.2019	1	43	transmembrane signaling receptor activity	downexpressed	Ontology
+GO:0004634	GO:0004634	-1.3917	0.0487	0.2239	1	28	phosphopyruvate hydratase activity	downexpressed	Ontology
+COG0202	COG0202	1.4528	0.0446	0.1978	1	19	DNA-directed 5'-3' RNA polymerase activity	overexpressed	Ontology
+GO:0051301	GO:0051301	1.4945	0.0229	0.1653	0.9998	30	cell division	overexpressed	Ontology
+COG2217	COG2217	1.6954	0.0027	0.0691	0.6634	27	Heavy metal translocating P-type atpase	overexpressed	Ontology
+GO:0009408	GO:0009408	1.4318	0.0384	0.1999	1	17	response to heat	overexpressed	Ontology
+GO:0006812	GO:0006812	1.452	0.011	0.1962	1	80	cation transport	overexpressed	Ontology
+K00371	K00371	-1.7231	0.009	0.049	0.6707	16	"narH, narY, nxrB; nitrate reductase / nitrite oxidoreductase, beta subunit [EC:1.7.5.1 1.7.99.-]"	downexpressed	Ontology
+GO:0000162	GO:0000162	1.4512	0.0365	0.1945	1	17	tryptophan biosynthetic process	overexpressed	Ontology
+1MUQX	1MUQX	-1.8075	8.00E-04	0.0292	0.3642	33	Dehydrogenase	downexpressed	Ontology
+2VHKE	2VHKE	1.4954	0.0406	0.1669	0.9998	15	Heavy metal translocating P-type atpase	overexpressed	Ontology
+K00370	K00370	-1.6325	0.0138	0.0893	0.9177	18	"narG, narZ, nxrA; nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]"	downexpressed	Ontology
+K00658	K00658	1.4136	0.0577	0.2102	1	23	"DLST, sucB; 2-oxoglutarate dehydrogenase E2 component (dihydrolipoamide succinyltransferase) [EC:2.3.1.61]"	overexpressed	Ontology
+1MURH	1MURH	1.441	0.0574	0.2019	1	15	"Part of a stress-induced multi-chaperone system, it is involved in the recovery of the cell from heat-induced damage, in cooperation with DnaK, DnaJ and GrpE"	overexpressed	Ontology
+GO:0030001	GO:0030001	1.3967	0.042	0.2174	1	28	metal ion transport	overexpressed	Ontology
+K03406	K03406	-1.5173	0.0228	0.1347	0.9972	24	mcp; methyl-accepting chemotaxis protein	downexpressed	Ontology
+1MU1C	1MU1C	1.7732	8.00E-04	0.0325	0.2976	27	"Master enzyme that delivers sulfur to a number of partners involved in Fe-S cluster assembly, tRNA modification or cofactor biosynthesis. Catalyzes the removal of elemental sulfur atoms from cysteine to produce alanine. Functions as a sulfur delivery protein for Fe-S cluster synthesis onto IscU, an Fe-S scaffold assembly protein, as well as other S acceptor proteins"	overexpressed	Ontology
+1MU9K	1MU9K	1.4285	0.0402	0.2024	1	27	Receptor	overexpressed	Ontology
+2VHSF	2VHSF	-2.129	0	0.0025	0.0026	46	"Cytochrome d1, heme"	downexpressed	Ontology
+GO:0071949	GO:0071949	1.417	0.0596	0.2124	1	18	FAD binding	overexpressed	Ontology
+GO:0016614	GO:0016614	-1.7909	0.0023	0.0331	0.4217	30	"oxidoreductase activity, acting on CH-OH group of donors"	downexpressed	Ontology
+2VI2M	2VI2M	1.5582	0.0236	0.1099	0.9961	15	prkA serine kinase	overexpressed	Ontology
+COG4771	COG4771	1.3978	0.0182	0.2205	1	87	TonB-dependent receptor	overexpressed	Ontology
+COG0605	COG0605	1.7814	0.0022	0.0632	0.2684	20	superoxide dismutase activity	overexpressed	Ontology
+COG4774	COG4774	1.6789	0.0028	0.0726	0.7428	26	siderophore transport	overexpressed	Ontology
+GO:0006396	GO:0006396	1.6188	0.0051	0.0986	0.9399	39	RNA processing	overexpressed	Ontology
+K15726	K15726	1.4326	0.0346	0.2013	1	38	"czcA, cusA, cnrA; heavy metal efflux system protein"	overexpressed	Ontology
+COG1538	COG1538	1.3961	0.0288	0.216	1	62	efflux transmembrane transporter activity	overexpressed	Ontology
+K15727	K15727	1.3971	0.0692	0.2192	1	22	"czcB, cusB, cnrB; membrane fusion protein, heavy metal efflux system"	overexpressed	Ontology
+GO:0008976	GO:0008976	-1.5739	0.0257	0.1158	0.9783	15	polyphosphate kinase activity	downexpressed	Ontology
+GO:0004013	GO:0004013	1.4438	0.0528	0.2003	1	17	adenosylhomocysteinase activity	overexpressed	Ontology
+K15725	K15725	1.6194	0.0072	0.1016	0.9394	24	"czcC, cusC, cnrC; outer membrane protein, heavy metal efflux system"	overexpressed	Ontology
+GO:0004654	GO:0004654	1.6121	0.0099	0.0993	0.9505	23	polyribonucleotide nucleotidyltransferase activity	overexpressed	Ontology
+GO:0020037	GO:0020037	-1.6066	0	0.1023	0.953	223	heme binding	downexpressed	Ontology
+1MU33	1MU33	1.5832	0.0171	0.1047	0.9846	16	Belongs to the universal ribosomal protein uS2 family	overexpressed	Ontology
+1MVE2	1MVE2	-1.5669	0.031	0.1152	0.9824	15	polyphosphate kinase	downexpressed	Ontology
+GO:0004129	GO:0004129	-1.4873	0.0116	0.146	0.9991	52	cytochrome-c oxidase activity	downexpressed	Ontology
+GO:0048038	GO:0048038	-1.4376	0.043	0.1924	1	26	quinone binding	downexpressed	Ontology
+COG0174	COG0174	1.3586	0.0712	0.2483	1	31	glutamate-ammonia ligase activity	overexpressed	Ontology
+COG0052	COG0052	1.5781	0.0165	0.1026	0.9882	16	"endonucleolytic cleavage to generate mature 3'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"	overexpressed	Ontology
+COG1140	COG1140	-1.726	0.0094	0.0501	0.6613	16	nitrate reductase beta subunit	downexpressed	Ontology
+COG0050	COG0050	1.466	0.0026	0.1925	1	155	This protein promotes the GTP-dependent binding of aminoacyl-tRNA to the A-site of ribosomes during protein biosynthesis	overexpressed	Ontology
+GO:0015935	GO:0015935	1.4139	0.0187	0.2122	1	81	small ribosomal subunit	overexpressed	Ontology
+GO:0015934	GO:0015934	1.5605	0.0015	0.1096	0.9953	92	large ribosomal subunit	overexpressed	Ontology
+K04564	K04564	1.7655	0.001	0.0336	0.33	20	"SOD2; superoxide dismutase, Fe-Mn family [EC:1.15.1.1]"	overexpressed	Ontology
+2VM27	2VM27	-1.7404	0.0026	0.0455	0.6086	31	Belongs to the ompA family	downexpressed	Ontology
+1MVB9	1MVB9	1.567	0.016	0.1072	0.9934	20	Involved in mRNA degradation. Catalyzes the phosphorolysis of single-stranded polyribonucleotides processively in the 3'- to 5'-direction	overexpressed	Ontology
+GO:0008940	GO:0008940	-1.9336	0	0.0166	0.0817	56	nitrate reductase activity	downexpressed	Ontology
+1MUQ2	1MUQ2	1.6354	0.0124	0.0909	0.9019	15	May play a key role in the regulation of the intracellular concentration of adenosylhomocysteine	overexpressed	Ontology
+2VI1P	2VI1P	1.4749	0.0449	0.1879	1	15	Involved in mRNA degradation. Catalyzes the phosphorolysis of single-stranded polyribonucleotides processively in the 3'- to 5'-direction	overexpressed	Ontology
+COG0459	COG0459	1.5558	0.0015	0.1102	0.9968	90	protein refolding	overexpressed	Ontology
+GO:0006402	GO:0006402	1.5775	0.0141	0.1008	0.9885	24	mRNA catabolic process	overexpressed	Ontology
+GO:0000015	GO:0000015	-1.388	0.0573	0.2255	1	28	phosphopyruvate hydratase complex	downexpressed	Ontology
+COG2885	COG2885	-1.3982	0.0097	0.2188	1	101	chlorophyll binding	downexpressed	Ontology
+COG1028	COG1028	-1.4184	0.0182	0.2026	1	59	Short-chain dehydrogenase reductase Sdr	downexpressed	Ontology
+GO:0043546	GO:0043546	-1.6127	0.0053	0.1012	0.9455	51	molybdopterin cofactor binding	downexpressed	Ontology
+1MV0X	1MV0X	1.5398	0.0206	0.1233	0.9989	21	TonB-dependent siderophore receptor	overexpressed	Ontology
+2VH91	2VH91	1.6392	0.0091	0.0905	0.8907	22	"Master enzyme that delivers sulfur to a number of partners involved in Fe-S cluster assembly, tRNA modification or cofactor biosynthesis. Catalyzes the removal of elemental sulfur atoms from cysteine to produce alanine. Functions as a sulfur delivery protein for Fe-S cluster synthesis onto IscU, an Fe-S scaffold assembly protein, as well as other S acceptor proteins"	overexpressed	Ontology
+2VH8R	2VH8R	-1.5277	0.0223	0.1314	0.9956	27	Belongs to the short-chain dehydrogenases reductases (SDR) family	downexpressed	Ontology
+GO:0003924	GO:0003924	1.4611	4.00E-04	0.1911	1	226	GTPase activity	overexpressed	Ontology
+COG1392	COG1392	-1.9021	0.0019	0.0161	0.1253	16	Protein of unknown function DUF47	downexpressed	Ontology
+K04077	K04077	1.5913	0.0015	0.1039	0.9766	88	"groEL, HSPD1; chaperonin GroEL"	overexpressed	Ontology
+GO:0052935	GO:0052935	-1.9685	2.00E-04	0.0157	0.0477	21	ethanol:cytochrome c oxidoreductase activity	downexpressed	Ontology
+K03704	K03704	1.4034	0.0554	0.2189	1	26	cspA; cold shock protein	overexpressed	Ontology
+K01647	K01647	-1.5332	0.0101	0.1296	0.9945	44	"CS, gltA; citrate synthase [EC:2.3.3.1]"	downexpressed	Ontology
+GO:0019843	GO:0019843	1.731	5.00E-04	0.052	0.4914	57	rRNA binding	overexpressed	Ontology
+1MWUN	1MWUN	1.4143	0.0669	0.2141	1	19	Outer membrane protein (Porin)	overexpressed	Ontology
+GO:0019829	GO:0019829	1.6829	0.0041	0.0727	0.7243	26	cation-transporting ATPase activity	overexpressed	Ontology
+GO:0009089	GO:0009089	1.5287	0.0129	0.1341	0.9994	36	lysine biosynthetic process via diaminopimelate	overexpressed	Ontology
+K01915	K01915	1.361	0.067	0.2491	1	31	"glnA, GLUL; glutamine synthetase [EC:6.3.1.2]"	overexpressed	Ontology
+K07220	K07220	-1.8572	0.0023	0.0218	0.2196	15	K07220; uncharacterized protein	downexpressed	Ontology
+COG2010	COG2010	-1.8457	0	0.023	0.247	99	Cytochrome c	downexpressed	Ontology
+GO:0005840	GO:0005840	1.3729	6.00E-04	0.239	1	468	ribosome	overexpressed	Ontology
+GO:0006414	GO:0006414	1.6076	0	0.0952	0.9565	177	translational elongation	overexpressed	Ontology
+2VIQR	2VIQR	1.7049	0.0049	0.0646	0.6156	17	TonB-dependent siderophore receptor	overexpressed	Ontology
+K07180	K07180	1.5814	0.0164	0.104	0.9856	16	prkA; serine protein kinase	overexpressed	Ontology
+GO:0004356	GO:0004356	1.3562	0.0683	0.2477	1	31	glutamate-ammonia ligase activity	overexpressed	Ontology
+K00023	K00023	-1.5081	0.0122	0.1345	0.9978	42	phbB; acetoacetyl-CoA reductase [EC:1.1.1.36]	downexpressed	Ontology
+COG2766	COG2766	1.5878	0.0138	0.105	0.9806	17	serine protein kinase	overexpressed	Ontology
+COG1840	COG1840	1.7802	0.0012	0.046	0.272	23	"ABC-type Fe3 transport system, periplasmic component"	overexpressed	Ontology
+GO:0004108	GO:0004108	-1.5334	0.0103	0.1327	0.9945	44	citrate (Si)-synthase activity	downexpressed	Ontology
+GO:0006801	GO:0006801	1.8756	0	0.0303	0.0584	23	superoxide metabolic process	overexpressed	Ontology
+GO:0006807	GO:0006807	1.3938	0.0249	0.2174	1	73	nitrogen compound metabolic process	overexpressed	Ontology
+1MU08	1MU08	1.6583	0.0068	0.0853	0.8285	22	Heavy metal translocating P-type atpase	overexpressed	Ontology
+K01999	K01999	1.4554	0.0054	0.1967	1	116	livK; branched-chain amino acid transport system substrate-binding protein	overexpressed	Ontology
+K02967	K02967	1.5835	0.018	0.107	0.9845	16	"RP-S2, MRPS2, rpsB; small subunit ribosomal protein S2"	overexpressed	Ontology
+2TQP8	2TQP8	1.4198	0.0512	0.2108	1	25	This protein promotes the GTP-dependent binding of aminoacyl-tRNA to the A-site of ribosomes during protein biosynthesis	overexpressed	Ontology
+GO:0019538	GO:0019538	1.6894	0.0026	0.0703	0.6924	38	protein metabolic process	overexpressed	Ontology
+GO:0030170	GO:0030170	1.4998	0.0028	0.1666	0.9997	111	pyridoxal phosphate binding	overexpressed	Ontology
+1N3PN	1N3PN	-2.014	0	0.0114	0.0233	58	Nitrite reductase	downexpressed	Ontology
+1MW9S	1MW9S	-1.5856	0.0221	0.1129	0.9713	17	Belongs to the prokaryotic molybdopterin-containing oxidoreductase family	downexpressed	Ontology
+GO:0004160	GO:0004160	1.4394	0.0572	0.1989	1	17	dihydroxy-acid dehydratase activity	overexpressed	Ontology
+GO:0009055	GO:0009055	-1.5401	0	0.1332	0.9932	297	electron transfer activity	downexpressed	Ontology
+GO:0008483	GO:0008483	1.658	0.0042	0.0817	0.8294	27	transaminase activity	overexpressed	Ontology
+1MU5M	1MU5M	-1.6834	0.0038	0.0601	0.8016	34	Belongs to the FAD-dependent oxidoreductase 2 family. FRD SDH subfamily	downexpressed	Ontology
+COG5013	COG5013	-1.5871	0.0223	0.1153	0.9704	17	Belongs to the prokaryotic molybdopterin-containing oxidoreductase family	downexpressed	Ontology
+GO:0005525	GO:0005525	1.4231	4.00E-04	0.2081	1	273	GTP binding	overexpressed	Ontology
+K02355	K02355	1.6556	0.0019	0.0806	0.8372	45	"fusA, GFM, EFG; elongation factor G"	overexpressed	Ontology
+2VM8J	2VM8J	-1.3659	0.0514	0.239	1	35	Nitrous-oxide reductase is part of a bacterial respiratory system which is activated under anaerobic conditions in the presence of nitrate or nitrous oxide	downexpressed	Ontology
+GO:0003746	GO:0003746	1.6105	0	0.0949	0.9531	177	translation elongation factor activity	overexpressed	Ontology
+K03286	K03286	-1.4967	0.0177	0.1426	0.9984	36	"TC.OOP; OmpA-OmpF porin, OOP family"	downexpressed	Ontology
+K03561	K03561	1.3756	0.0898	0.2369	1	16	exbB; biopolymer transport protein ExbB	overexpressed	Ontology
+COG1053	COG1053	-1.6865	0.0046	0.0606	0.7914	34	succinate dehydrogenase	downexpressed	Ontology
+1N6EM	1N6EM	-1.7864	3.00E-04	0.0328	0.4393	38	Belongs to the ompA family	downexpressed	Ontology
+COG0480	COG0480	1.6622	0.0023	0.0852	0.8132	45	"Catalyzes the GTP-dependent ribosomal translocation step during translation elongation. During this step, the ribosome changes from the pre-translocational (PRE) to the post- translocational (POST) state as the newly formed A-site-bound peptidyl-tRNA and P-site-bound deacylated tRNA move to the P and E sites, respectively. Catalyzes the coordinated movement of the two tRNA molecules, the mRNA and conformational changes in the ribosome"	overexpressed	Ontology
+GO:0030288	GO:0030288	-1.383	0.0395	0.2253	1	46	outer membrane-bounded periplasmic space	downexpressed	Ontology
+GO:0018454	GO:0018454	-1.5113	0.015	0.1343	0.9977	42	acetoacetyl-CoA reductase activity	downexpressed	Ontology
+1MUEV	1MUEV	-1.4598	0.0258	0.1724	0.9998	41	Acetoacetyl-CoA reductase	downexpressed	Ontology
+K02358	K02358	1.5024	0.0015	0.1659	0.9997	132	"tuf, TUFM; elongation factor Tu"	overexpressed	Ontology
+K00333	K00333	-1.4043	0.063	0.214	1	21	nuoD; NADH-quinone oxidoreductase subunit D [EC:7.1.1.2]	downexpressed	Ontology
+1R9YZ	1R9YZ	1.4046	0.0682	0.2194	1	17	"This protein binds to the 23S rRNA, and is important in its secondary structure. It is located near the subunit interface in the base of the L7 L12 stalk, and near the tRNA binding site of the peptidyltransferase center"	overexpressed	Ontology
+GO:0016779	GO:0016779	-1.6915	0.0109	0.0604	0.7748	16	nucleotidyltransferase activity	downexpressed	Ontology
+1MVIN	1MVIN	-1.4345	0.054	0.1928	1	22	"NDH-1 shuttles electrons from NADH, via FMN and iron- sulfur (Fe-S) centers, to quinones in the respiratory chain. The immediate electron acceptor for the enzyme in this species is believed to be ubiquinone. Couples the redox reaction to proton translocation (for every two electrons transferred, four hydrogen ions are translocated across the cytoplasmic membrane), and thus conserves the redox energy in a proton gradient"	downexpressed	Ontology
+K03040	K03040	1.4496	0.0497	0.1942	1	19	rpoA; DNA-directed RNA polymerase subunit alpha [EC:2.7.7.6]	overexpressed	Ontology
+COG0649	COG0649	-1.4273	0.0495	0.1984	1	22	quinone binding	downexpressed	Ontology
+COG0129	COG0129	1.463	0.0496	0.1941	1	18	dihydroxy-acid dehydratase activity	overexpressed	Ontology
+GO:0042126	GO:0042126	-1.9078	0	0.017	0.1161	31	nitrate metabolic process	downexpressed	Ontology
+GO:0009228	GO:0009228	1.7157	0.0039	0.0597	0.5636	17	thiamine biosynthetic process	overexpressed	Ontology
+1MVIH	1MVIH	-1.4066	0.039	0.2145	1	37	Nitrous-oxide reductase is part of a bacterial respiratory system which is activated under anaerobic conditions in the presence of nitrate or nitrous oxide	downexpressed	Ontology
+COG0499	COG0499	1.4376	0.0523	0.1989	1	17	adenosylhomocysteinase activity	overexpressed	Ontology
+COG1104	COG1104	1.7769	0.0015	0.034	0.2851	28	cysteine desulfurase activity	overexpressed	Ontology
+2TRGP	2TRGP	-1.3796	0.0449	0.2229	1	16	Produces ATP from ADP in the presence of a proton gradient across the membrane. The catalytic sites are hosted primarily by the beta subunits	downexpressed	Ontology
+K01251	K01251	1.434	0.0377	0.2018	1	17	"E3.3.1.1, ahcY; adenosylhomocysteinase [EC:3.3.1.1]"	overexpressed	Ontology
+COG0097	COG0097	1.364	0.087	0.249	1	18	rRNA binding	overexpressed	Ontology
+COG0372	COG0372	-1.5344	0.0095	0.1354	0.9942	44	Belongs to the citrate synthase family	downexpressed	Ontology
+COG1185	COG1185	1.6113	0.009	0.097	0.9517	23	polyribonucleotide nucleotidyltransferase activity	overexpressed	Ontology
+K00962	K00962	1.6127	0.0094	0.1018	0.9484	23	"pnp, PNPT1; polyribonucleotide nucleotidyltransferase [EC:2.7.7.8]"	overexpressed	Ontology
+K04487	K04487	1.7775	8.00E-04	0.0373	0.2821	28	"iscS, NFS1; cysteine desulfurase [EC:2.8.1.7]"	overexpressed	Ontology
+K01534	K01534	1.5994	0.0135	0.1008	0.9675	22	zntA; Zn2+/Cd2+-exporting ATPase [EC:7.2.2.12 7.2.2.21]	overexpressed	Ontology
+COG0090	COG0090	1.3854	0.062	0.2259	1	24	rRNA binding	overexpressed	Ontology
+GO:0050304	GO:0050304	-1.5117	0.0407	0.1369	0.9977	15	nitrous-oxide reductase activity	downexpressed	Ontology
+MAG-108	MAG-108	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__;f__;g__;s__	Others	MAG
+MAG-118	MAG-118	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Altererythrobacter;s__	Others	MAG
+MAG-119	MAG-119	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-120	MAG-120	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-121	MAG-121	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Sphingomonadales;f__Sphingomonadaceae;g__Sphingopyxis;s__	Sphingopyxis	MAG
+MAG-123	MAG-123	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Tabrizicola;s__	Others	MAG
+MAG-124	MAG-124	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Tabrizicola;s__	Others	MAG
+MAG-128	MAG-128	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__;s__	Others	MAG
+MAG-129	MAG-129	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Gemmobacter;s__	Others	MAG
+MAG-133	MAG-133	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__;g__Phreatobacter;s__	Phreatobacter	MAG
+MAG-134	MAG-134	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Rhizobiaceae;g__Mesorhizobium;s__	Mesorhizobium	MAG
+MAG-139	MAG-139	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Hyphomicrobiaceae;g__Hyphomicrobium;s__	Others	MAG
+MAG-140	MAG-140	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Hyphomicrobiaceae;g__Hyphomicrobium;s__Hyphomicrobium zavarzinii	Others	MAG
+MAG-143	MAG-143	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__;g__;s__	Others	MAG
+MAG-156	MAG-156	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__;s__	Others	MAG
+MAG-158	MAG-158	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__;g__;s__	Others	MAG
+MAG-16	MAG-16	0	0	0	0	75	d__Bacteria;p__Verrucomicrobia;c__Verrucomicrobiae;o__Verrucomicrobiales;f__Verrucomicrobiaceae;g__;s__	Others	MAG
+MAG-166	MAG-166	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Nitrosomonadaceae;g__Nitrosomonas;s__	Nitrosomonas	MAG
+MAG-167	MAG-167	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Nitrosomonadaceae;g__Nitrosomonas;s__	Nitrosomonas	MAG
+MAG-168	MAG-168	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-169	MAG-169	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Sterolibacteriaceae;g__;s__	Others	MAG
+MAG-170	MAG-170	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-171	MAG-171	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-174	MAG-174	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-175	MAG-175	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Sterolibacteriaceae;g__Methyloversatilis;s__	Methyloversatilis	MAG
+MAG-176	MAG-176	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Nitrosomonadales;f__Sterolibacteriaceae;g__Methyloversatilis;s__Methyloversatilis discipulorum	Methyloversatilis	MAG
+MAG-177	MAG-177	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Thauera;s__	Thauera	MAG
+MAG-178	MAG-178	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Thauera;s__	Thauera	MAG
+MAG-179	MAG-179	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-180	MAG-180	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-181	MAG-181	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__Zoogloea;s__	Zoogloea	MAG
+MAG-182	MAG-182	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-183	MAG-183	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Zoogloeaceae;g__;s__	Others	MAG
+MAG-184	MAG-184	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Rhodocyclaceae;g__;s__	Others	MAG
+MAG-186	MAG-186	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-187	MAG-187	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__;s__	Others	MAG
+MAG-188	MAG-188	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-189	MAG-189	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-190	MAG-190	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-191	MAG-191	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-192	MAG-192	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-193	MAG-193	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-194	MAG-194	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Rhodocyclales;f__Azonexaceae;g__Dechloromonas;s__	Dechloromonas	MAG
+MAG-196	MAG-196	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-197	MAG-197	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__Accumulibacter phosphatis	Candidatus Accumulibacter	MAG
+MAG-198	MAG-198	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-199	MAG-199	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-200	MAG-200	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-201	MAG-201	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-202	MAG-202	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-203	MAG-203	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__;f__;g__Candidatus Accumulibacter;s__	Candidatus Accumulibacter	MAG
+MAG-204	MAG-204	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__;g__;s__	Others	MAG
+MAG-205	MAG-205	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__;g__;s__	Others	MAG
+MAG-206	MAG-206	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Hydrogenophaga;s__	Others	MAG
+MAG-207	MAG-207	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Others	MAG
+MAG-208	MAG-208	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Comamonas;s__	Comamonas	MAG
+MAG-209	MAG-209	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Comamonas;s__Delftia acidovorans	Comamonas	MAG
+MAG-210	MAG-210	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rhodoferax;s__	Others	MAG
+MAG-211	MAG-211	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Others	MAG
+MAG-212	MAG-212	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-213	MAG-213	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-214	MAG-214	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-215	MAG-215	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-218	MAG-218	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-219	MAG-219	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-220	MAG-220	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Rubrivivax	MAG
+MAG-221	MAG-221	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Others	MAG
+MAG-222	MAG-222	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Pelomonas;s__	Pelomonas	MAG
+MAG-224	MAG-224	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Betaproteobacteria;o__Burkholderiales;f__;g__;s__	Others	MAG
+MAG-227	MAG-227	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Moraxellaceae;g__Acinetobacter;s__Acinetobacter junii	Others	MAG
+MAG-230	MAG-230	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__Xanthomonadaceae;g__Pseudoxanthomonas;s__Pseudoxanthomonas mexicana	Pseudoxanthomonas	MAG
+MAG-231	MAG-231	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__Ahniellaceae;g__;s__	Others	MAG
+MAG-234	MAG-234	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__;f__Candidatus Competibacteraceae;g__Competibacter;s__	Competibacter	MAG
+MAG-235	MAG-235	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__;f__Candidatus Competibacteraceae;g__;s__	Others	MAG
+MAG-236	MAG-236	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__;f__Candidatus Competibacteraceae;g__Competibacter;s__	Competibacter	MAG
+MAG-237	MAG-237	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Nevskiales;f__Sinobacteraceae;g__Steroidobacter;s__	Others	MAG
+MAG-243	MAG-243	0	0	0	0	75	d__Bacteria;p__Acidobacteria;c__Acidobacteriia;o__Bryobacterales;f__;g__;s__	Others	MAG
+MAG-245	MAG-245	0	0	0	0	75	d__Bacteria;p__Acidobacteria;c__Acidobacteriia;o__Bryobacterales;f__;g__;s__	Others	MAG
+MAG-246	MAG-246	0	0	0	0	75	d__Bacteria;p__Acidobacteria;c__Acidobacteriia;o__Bryobacterales;f__;g__;s__	Others	MAG
+MAG-248	MAG-248	0	0	0	0	75	d__Bacteria;p__Acidobacteria;c__Blastocatellia;o__;f__;g__;s__	Others	MAG
+MAG-285	MAG-285	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-286	MAG-286	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-287	MAG-287	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-288	MAG-288	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-289	MAG-289	0	0	0	0	75	d__Bacteria;p__Nitrospirae;c__Nitrospira;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira;s__	Nitrospira	MAG
+MAG-339	MAG-339	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Flavobacteriia;o__Flavobacteriales;f__Flavobacteriaceae;g__Chryseobacterium;s__Chryseobacterium gambrini	Others	MAG
+MAG-340	MAG-340	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Flavobacteriia;o__Flavobacteriales;f__Flavobacteriaceae;g__Flavobacterium;s__Flavobacterium lindanitolerans	Others	MAG
+MAG-342	MAG-342	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-343	MAG-343	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-344	MAG-344	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-349	MAG-349	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-350	MAG-350	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-351	MAG-351	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-352	MAG-352	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Others	MAG
+MAG-373	MAG-373	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Chitinophagales;f__Chitinophagaceae;g__Sediminibacterium;s__	Others	MAG
+MAG-378	MAG-378	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Chitinophagales;f__Chitinophagaceae;g__;s__	Others	MAG
+MAG-379	MAG-379	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Chitinophagales;f__Chitinophagaceae;g__;s__	Others	MAG
+MAG-390	MAG-390	0	0	0	0	75	d__Bacteria;p__Bacteroidetes;c__Chitinophagia;o__Chitinophagales;f__Chitinophagaceae;g__Taibaiella;s__	Others	MAG
+MAG-98	MAG-98	0	0	0	0	75	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__;f__;g__;s__	Others	MAG

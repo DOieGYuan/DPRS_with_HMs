@@ -11,5 +11,3 @@ singlem summarise --input_otu_tables s*.txt --rarefied_output_otu_table rarefied
 singlem pipe --sequences /media/linyuan/SSD1/Binning/metaWarp_refine/reasm/reassembled_bins/*.fa --otu_table genomes_otu_table.txt
 singlem pipe --sequences /media/linyuan/SSD1/Binning/all_coasm_kmin21.contigs.fa --otu_table assembly_otu.txt
 singlem appraise --metagenome_otu_tables combined_otu.txt --assembly_otu_tables assembly_otu.txt --genome_otu_tables genomes_otu_table.txt
-# plot
-singlem appraise --metagenome_otu_tables combined_otu.txt --assembly_otu_tables assembly_otu.txt --genome_otu_tables genomes_otu_table.txt --imperfect --sequence_identity 0.90 --plot imperfect.svg
