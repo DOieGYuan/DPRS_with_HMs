@@ -206,8 +206,9 @@ cat tree/dprs*92*.nwk | sed 's/\'//g' > TreeFile.nwk
 #calculate orthoANI
 java -jar OAU.jar -u usearch -fd ./ -n 64 -fmt matrix -o ANI.txt
 ```
-Now we get **[TreeFile.nwk](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/Data/iTOL_PhylogeneticTree/TreeFile.nwk)**  
-Upload the .nwk file onto the iTOL online system to construct a phylogenetic tree.  
+Now we get **[TreeFile.nwk](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Data/iTOL_PhylogeneticTree/TreeFile.nwk)**  
+Upload the .nwk file onto the [iTOL online system](https://itol.embl.de/) to construct a phylogenetic tree.  
+How to decorate the tree to build Fig.1? see [here](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rscripts/Decorate_tree.md) for details.  
 
 *(Optional)* Short-read based classification using [kraken2](https://ccb.jhu.edu/software/kraken2/)  
 Database is based on all the bacterial, algal and viral genomes download from NCBI. (Custom database construction see [kraken2's manual](https://ccb.jhu.edu/software/kraken2/index.shtml?t=manual))
@@ -217,31 +218,59 @@ do kraken2 --db NCBI_db/ --paired $f ${f%_1.fq.gz}_2.fq.gz \
   --threads 64 --report ${f%_1.fq.gz}.txt --use-mpa-style
 done
 ```
-**(Supplementary information Fig.S1)** ribosomal protein gene-based classification by [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get 16S-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
+**(Supplementary information Fig.S1)** ribosomal protein gene-based classification by [singleM](https://github.com/wwood/singlem) using [singleM.sh](https://raw.githubusercontent.com/DOieGYuan/DPRS_with_HMs/master/shell/SingleM.sh), we can get ribosmal protein gene(e.g., *rplB*)-based profile of taxonomy in DPRS and the proportion of community covered by our MAGs.
 
 
-### Extract functional genes
-**in co-assembled metagenome**  
+### Predict functional genes
+Predict protein-coding genes (ORFs) using Prodigal,  
+1. in co-assembled metagenome (for buildling custom database for protein dentification)
 ```
 prodigal -a Coasm.faa -d Coasm.fna -i Coasm.fa -p meta
 ```
-**in MAGs**  
-Download our home-made referential database (.dmnd, hmm and original .fasta).  
+2. in MAGs (for exploring the funtional potentials in MAGs)
+
 ```
 # predict CDS by Prodigal
 for f in genomes/*.fa
 do prodigal -p single -i $f -a aa/${f%.fa}.faa
 done
+```
+### Annotate genes of interest (those involved in N/P metabolisms and metal resistance) in MAGs
+1. DIAMOND searching  
+Download our home-made referential database in this repository (.dmnd) and [BacMet](http://bacmet.biomedicine.gu.se/download_temporary.html).
+```
 cd aa/
 mv [directory]/*.dmnd .
-mv [directory]/*.hmm .
 ./Search_functional_genes_DIAMOND.sh # 1e-10 50 80 80
-./Search_functional_genes_HMMER.sh 60
 ```
-Couple the results of DIAMOND (1e-10,id50,cov80) and HMMER (socre > 60), the presence of functional genes in MAGs is profiled.  
-Refer to the [annotation template](https://itol.embl.de/help/dataset_binary_template.txt) provided by iTOL, we get **[dataset_binary_functional_genes.txt](https://github.com/DOieGYuan/DPRS_with_HMs/raw/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_binary_functional_genes.txt)**  
+2. Cross validation by METABOLIC based on several Hidden Markov Models (HMMs).
+```
+conda activate [metabolic]
+# Genome files' suffix should be .fasta
+perl METABOLIC-G.pl -t 64 -in-gn [genomes] -o metabolic_results -p single
+# Extract needed information
+cd metabolic_results/Each_HMM_Amino_Acid_Sequence
+for f in *.hmm.collection.faa;
+do printf "bin\t${f%.hmm.collection.faa}.hmm\n" > ../FunctionalGenesPA/${f%.hmm.collection.faa};
+grep ">" $f | sed 's/>//g' | sed 's/~~/\t/g' | cut -f 1 | sort -u | sed 's/$/\tPresent/g' >> ../FunctionalGenesPA/${f%.hmm.collection.faa};
+done
 
-Draw the file to the iTOL tree decorating window to activate this annotation.
+# Mergy in R
+R
+library(tidyverse)
+files = dir("FunctionalGenesPA/")
+for(f in files){
+	nowf = read_tsv(paste("merged/",f,sep=""))
+	if(f == files[1]){
+		mg = nowf
+	}
+	else{
+		mg=full_join(mg,nowf)
+	}
+}
+write_tsv(mg,"merged/HMM_results.tsv")
+```
+3. Couple the results of DIAMOND and METABOLIC, the presence of functional genes in MAGs is profiled.  
 
 ### Estimate the abundance of each MAG based on its coverage
 We use the "quant_bins" module of metaWRAP to get copies of genome per million reads (CoPM):  
@@ -258,12 +287,6 @@ Then base on the abundance file, we perform LEfSe analysis to identify biomarker
 lefse-format_input.py MAG_info.tsv lefse.out -c 2 -u 1 -o 1000000
 run_lefse.py lefse.out lefse.tsv -l 2
 ```
-Refer to the [annotation template](https://itol.embl.de/help/dataset_color_strip.txt) provided by iTOL, we get **[dataset_color_strip_LDA_group.txt](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/Rawdata/Metagenome/iTOL_PhylogeneticTree/dataset_color_strip_LDA_group.txt)**  
-
-Draw the file to the iTOL tree decorating window to activate this annotation.  
-
-Here, we get **Fig.1** (Functional microbes inhabiting DPRS).
-
 ### Plot abundance profile of MAGs
 To create **Fig.2**, we use R package ggplot2.
 ```
