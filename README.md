@@ -1,4 +1,4 @@
-# Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [Unpublished]
+# Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [ASAP in *Microbiome*]
 Follow this step-by-step guidance to reproduce the bioinformatics results in our paper.  
 The background, significance, and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
 
@@ -35,7 +35,7 @@ Shell scripts to reproduce data processing in our paper are in [Shellscripts](ht
 ## Install dependencies
 All the processes were performed on ubuntu 16.04LTS OS.
 We recommond using [Anaconda](https://www.anaconda.com/) to install all the dependencies.   
-At least 256GB RAM for assembly, 150GB RAM for downstream taxonomic analysis, and 64GB RAM for the rest analysis.
+At least 256GB RAM for assembly, 150GB RAM for downstream taxonomic analysis, and 64GB RAM for the rest analyses.
 ### quality control
 ```
 conda create -n qc -c bioconda fastqc multiqc trimmomatic -y
@@ -73,7 +73,7 @@ Use [UBCG](https://www.ezbiocloud.net/) for building tree file and [iTOL](https:
 ```
 conda install -c bioconda enrichm hmmer diamond
 ```
-Also install [emapper](https://github.com/eggnogdb/eggnog-mapper), [InterProScan](https://github.com/ebi-pf-team/interproscan), and [METABOLIC](https://github.com/AnantharamanLab/METABOLIC) manually
+Also install [emapper](https://github.com/eggnogdb/eggnog-mapper), [InterProScan](https://github.com/ebi-pf-team/interproscan), and [METABOLIC](https://github.com/AnantharamanLab/METABOLIC) manually.
 ### R packages
 * DESeq2
 * vegan
@@ -81,7 +81,7 @@ Also install [emapper](https://github.com/eggnogdb/eggnog-mapper), [InterProScan
 * ggpubr
 * igraph
 ### Enrichment analysis
-We use [GSEA](https://www.gsea-msigdb.org/gsea/) for enrichment analysis and identify the leading-edge subset.  
+We use [GSEA](https://www.gsea-msigdb.org/gsea/) for enrichment analysis and identify the leading-edge subset (core-functioning microbes).  
 [Cytoscape](https://cytoscape.org/) and [EnrichmentMap App](http://apps.cytoscape.org/apps/enrichmentmap) are used for visualization following this awesome [protocol](https://doi.org/10.1038/s41596-018-0103-9).
 ### Co-occurence network
 We recommond using [CoNet](http://psbweb05.psb.ugent.be/conet/microbialnetworks/conet_new.php) for predict both the co-presence and mutal-exclusion patterns.
@@ -157,8 +157,8 @@ chmod 775 binning_wf
 conda deactivate
 ```
 Details for binning see [here](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/binning_wf.md)  
-Now we get **MIMAG High- or medium-quality metagenomic-assembled genomes (MAGs)**.  
-Or, skip this time-consuming step by downloading MAGs (entitled "new MAG-xxx") from [here](https://submit.ncbi.nlm.nih.gov/subs/wgs_batch/SUB8814347).
+Now we get **MIMAG high- or medium-quality metagenomic-assembled genomes (MAGs)**.  
+Or, skip this time-consuming step by downloading MAGs (entitled "new MAG-xxx") from [here](https://dataview.ncbi.nlm.nih.gov/object/PRJNA592128).
 ### Taonomic classification
 See [GTDBtk manual](https://ecogenomics.github.io/GTDBTk/) for details in MAG taxonomic classification
 Here we use:
@@ -271,7 +271,7 @@ for(f in files){
 }
 write_tsv(mg,"merged/HMM_results.tsv")
 ```
-3. Couple the results of DIAMOND and METABOLIC, the presence of functional genes in MAGs should be valided by both DIAMOND and METABOLIC.  
+3. The presence of functional genes in MAGs should be valided by both DIAMOND and METABOLIC.  
 
 ### Estimate the abundance of each MAG based on its coverage
 We use the "quant_bins" module of metaWRAP to get copies of genome per million reads (CoPM):  
@@ -283,13 +283,13 @@ done
 metawrap quant_bins -b metawrap/reasm/reassembled_bins/ \
   -o quant_bins/ -a assembly/Coasm.contigs.fa *.fastq -t 64
 ```
-Then base on the [abundance file](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Data/iTOL_PhylogeneticTree/MAG_abundance.tsv), we perform LEfSe analysis to identify biomarkers in each group  
+Then base on the [abundance file](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Data/iTOL_PhylogeneticTree/MAG_abundance.tsv), we perform LEfSe analysis to identify biomarkers in each group.  
 ```
 lefse-format_input.py MAG_Abundance.tsv lefse.out -c 2 -s 3 -u 1 -o 1000000
 run_lefse.py lefse.out lefse.tsv -l 2
 ```
 ### Functional annoation of MAGs and Metaproteome
-Please refer to [enrichM](https://github.com/geronimp/enrichM), [emapper](https://github.com/eggnogdb/eggnog-mapper), and [InterProScan](https://github.com/ebi-pf-team/interproscan) to have a more comprehensive understanding of their functions.  
+Please refer to [enrichM](https://github.com/geronimp/enrichM), [emapper](https://github.com/eggnogdb/eggnog-mapper), and [InterProScan](https://github.com/ebi-pf-team/interproscan) to have a more comprehensive understanding of their usages.  
 *(Optional) If need KEGG BRITE and KO annotation file, please install R package KEGGREST and use make.BRITE.formatted.R to formate the htext file into tabular .tsv file.*
 In our study, we perform the following pipeline:
 ```
