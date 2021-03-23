@@ -1,4 +1,4 @@
-# Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [ASAP in *Microbiome*]
+# Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [*Microbiome*](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-021-01016-x)
 Follow this step-by-step guidance to reproduce the bioinformatics results in our paper.  
 The background, significance, and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
 
@@ -357,4 +357,7 @@ Now we have finished the majority of the analyses in our paper.
 *The metagenomic workflow can be finished easily by using our developing [pipeline](https://github.com/DOieGYuan/Easy-genomic-centric-metagenomics-pipepline) with single command*
 
 ## Contact Us
-Please feel free to contact linyuan@smail.nju.edu.cn
+Please feel free to contact linyuan@smail.nju.edu.cn  
+  
+If you find any resource is useful, please cite https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-021-01016-x.  
+Lin, Y., Wang, L., Xu, K. et al. Revealing taxon-specific heavy metal-resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics. Microbiome 9, 67 (2021). https://doi.org/10.1186/s40168-021-01016-x
