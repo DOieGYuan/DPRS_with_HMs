@@ -1,6 +1,6 @@
 # Revealing taxon-specific heavy metal resistance mechanisms in denitrifying phosphorus removal sludge using genome-centric metaproteomics [*Microbiome*](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-021-01016-x)
-Follow this step-by-step guidance to reproduce the bioinformatics results in our paper.  
-The background, significance, and main contents (findings from wet experiments) in this study is extensively disscussed in the paper.  
+Follow this step-by-step guidance (from raw data processing to plotting) to reproduce the bioinformatic results in our paper.  
+The background, significance, and main contents (findings) in this study is extensively disscussed in the paper.  
 
 ## Main contents in this repository
 Functional genes references (.fasta and .dmnd files) are deposited in [Database](https://github.com/DOieGYuan/DPRS_with_HMs/tree/master/Database);  
@@ -86,7 +86,7 @@ We use [GSEA](https://www.gsea-msigdb.org/gsea/) for enrichment analysis and ide
 ### Co-occurence network
 We recommond using [CoNet](http://psbweb05.psb.ugent.be/conet/microbialnetworks/conet_new.php) for predict both the co-presence and mutal-exclusion patterns.
 ### Metaproteomic analysis
-Since the commercial software DA2 maybe inaccessible to some readers, we recommond some other outstanding open-source software for MS data processing:
+Since the commercial software PD2 (Thermo) maybe inaccessible to some readers, we recommond some other outstanding open-source software for MS data processing:
 * [Maxquant](http://www.coxdocs.org/doku.php?id=maxquant:start)
 * [COSS](https://github.com/compomics/COSS)
 * [MPA](https://github.com/compomics/meta-proteome-analyzer)
