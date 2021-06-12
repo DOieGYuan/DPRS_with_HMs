@@ -160,7 +160,7 @@ Details for binning see [here](https://github.com/DOieGYuan/DPRS_with_HMs/blob/m
 Now we get **MIMAG high- or medium-quality metagenomic-assembled genomes (MAGs)**.  
 Or, skip this time-consuming step by downloading MAGs (entitled "new MAG-xxx") from [here](https://dataview.ncbi.nlm.nih.gov/object/PRJNA592128).
 ### Taonomic classification
-See [GTDBtk manual](https://ecogenomics.github.io/GTDBTk/) for details in MAG taxonomic classification
+See [GTDBtk manual](https://ecogenomics.github.io/GTDBTk/) for details in MAG taxonomic classification  
 Here we use:
 ```
 conda activate gtdb
@@ -181,16 +181,12 @@ checkm lineage_wf -t 12 -x fa ./ ./checkm_qa > bin_quality.log
 Estimate the presence of tRNAs and rRNAs using [How_many_tRNA.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/How_many_tRNA.sh) and [Who_has_rRNA.sh](https://github.com/DOieGYuan/DPRS_with_HMs/blob/master/shell/Who_has_rRNA.sh), or manually,
 ```
 # scan rRNA
-conda activate binning
 for f in *.fa;do cmscan --cpu 12 --rfam --cut_ga --nohmmonly --tblout ../cmscan_results/${f%.fa}.cmscan.txt --fmt 2 --clanin ../Rfam.clanin /media/linyuan/HD_Files/Database/Rfam/Rfam.cm $f;done
 
 # scan tRNA
-conda activate 16s
 for f in *.fa;do tRNAscan-SE -B --brief --thread 12 -o ../trnascan_results/${f%.fa}.trna.txt $f;done
-
-conda deactivate
 ```
-Based on the above information, MAGs are catergoried into high-quality (completeness > 90%, contamination < 5%, presence of the 23S, 16S, 5S rRNA genes, and at least 18 tRNAs), medium-quality (completeness ≥ 50% and contamination < 10%), and low-quality (the rest) based on the [MIMAG standard](https://doi.org/10.1038/nbt.3893). Only MAGs meet with the high- or metdium quality and has a quality score ≥ 45 (defined as completeness−5×contamination) were included in the downstream analysis.
+Based on the above information, MAGs are catergoried into high-quality (completeness > 90%, contamination < 5%, presence of the 23S, 16S, 5S rRNA genes, and at least 18 tRNAs), medium-quality (completeness ≥ 50% and contamination < 10%), and low-quality (the rest) based on the [MIMAG standard](https://doi.org/10.1038/nbt.3893). Only MAGs meet with the high- or medium quality and has a quality score ≥ 45 (defined as completeness−5×contamination) were included in the downstream analysis.
 ### Phylogenetic tree
 Build Phylogenetic tree for MAGs using UBCG pipeline
 ```
